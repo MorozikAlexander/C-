@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Test00_02
 {
-    class Item
+    public struct ItemStruct
+    {
+        public string name;
+        public int cost;
+        public int count;
+    }
+    
+    public class Item
     {
         private string name;
         private int cost;
@@ -26,13 +33,24 @@ namespace Test00_02
 
         public int CountValue
         {
-            get { return count; }
+             get { return count; }
             set { count = value; }
         }
 
-        public int GeneralCostValue()
+        public int SummValue()
         {
             return cost * count;
+        }
+
+        public Item(string name, int cost, int count)
+        {
+            NameValue = name;
+            CostValue = cost;
+            CountValue = count;
+        }
+
+        public Item()
+        {
         }
     }
 }
