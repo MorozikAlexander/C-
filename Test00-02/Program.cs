@@ -1,4 +1,20 @@
-﻿using System;
+﻿/*  Среднее время затраченное на заполнение 100.000 элементов:
+ * - 48  мс - объекты с конструктором
+ * - 77  мс - объекты без конструктора
+ * - 106 мс - структуры.
+ * 
+ *  Анализ MSIL кода при помощи ILDASM утилиты показал следующее:
+ * - в объектом случае использовались методы с поздней привязкой и загрузки в стек локальных переменных;
+ * - в структурном случае использовались методы замены и заргузки данных по ссылке на адрес;
+ * 
+ * Логично предположить, что в данном случае работа по ссылке избыточна по сравнению с работой по значениям.
+ */
+
+
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +37,6 @@ namespace Test00_02
             Console.Write(" Введите количество итераций(оптимально 10 итераций при 100.000 элементов):");
             jj = Convert.ToInt32(Console.ReadLine());
 
-            
             Random rnd = new Random();
             List<Item> ArrayList = new List<Item>();
             List<ItemStruct> ArrayListStruct = new List<ItemStruct>();
@@ -76,19 +91,18 @@ namespace Test00_02
             Console.WriteLine("Время:" + gtime);
 
             int summ = 0;
-            
+                        
             for (i = 1; i <= kk; i++)
             {
                 summ += ArrayList[i - 1].CostValue;
             }
             Console.WriteLine("Сумма стоимостей в объектах:" + summ);
+            
 
             summ = 0;
-
             for (i = 1; i <= kk; i++)
             {
                 summ += ArrayListStruct[i - 1].cost;
-
             }
 
             Console.WriteLine("Сумма стоимостей в структурах:" + summ);
