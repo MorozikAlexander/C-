@@ -9,11 +9,6 @@
  * 
  * Логично предположить, что в данном случае работа по ссылке избыточна по сравнению с работой по значениям.
  */
-
-
-
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
