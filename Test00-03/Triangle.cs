@@ -23,7 +23,7 @@ namespace Test00_03
             C = 0;            
         }
 
-        public void CheckTriangleType()
+        private void CheckTriangleType()
         {
             mytriangletype = GetTriangleType(A, B, C);
         }
@@ -64,15 +64,15 @@ namespace Test00_03
         {
             if (isValidTriangle(xx, yy, zz) == true)
             {
-                if (sides[0] * sides[0] == sides[1] * sides[1] + sides[1] * sides[1])
+                if (sides[0] * sides[0] == sides[1] * sides[1] + sides[2] * sides[2])
                 {
                     return TriangleType.Rect;
                 }
-                else if (sides[0] * sides[0] > sides[1] * sides[1] + sides[1] * sides[1])
+                else if (sides[0] * sides[0] > sides[1] * sides[1] + sides[2] * sides[2])
                 {
                     return TriangleType.Obtus;
                 }
-                else if (sides[0] * sides[0] < sides[1] * sides[1] + sides[1] * sides[1])
+                else if (sides[0] * sides[0] < sides[1] * sides[1] + sides[2] * sides[2])
                 {
                     return TriangleType.Acute;
                 }
@@ -89,6 +89,7 @@ namespace Test00_03
 
         public string PrintTriangleType()
         {
+            CheckTriangleType();
             switch (mytriangletype)
             {
                 case TriangleType.Rect:

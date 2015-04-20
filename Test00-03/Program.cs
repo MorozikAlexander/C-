@@ -34,8 +34,7 @@ namespace Test00_03
                         break;
                     default:
                         break;
-                }
-                mt.CheckTriangleType();
+                }                
             } while (cki.Key != ConsoleKey.Escape);
         }
     }
