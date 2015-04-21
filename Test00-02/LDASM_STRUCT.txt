@@ -1,0 +1,14 @@
+  IL_00c1:  ldloc.s    ArrayListStruct
+  IL_00c3:  ldloca.s   '<>g__initLocal1'
+  IL_00c5:  initobj    Test00_02.ItemStruct
+  IL_00cb:  ldloca.s   '<>g__initLocal1'
+  IL_00cd:  ldstr      "Item"
+  IL_00d2:  stfld      string Test00_02.ItemStruct::name
+  IL_00d7:  ldloca.s   '<>g__initLocal1'
+  IL_00d9:  ldc.i4.s   100
+  IL_00db:  stfld      int32 Test00_02.ItemStruct::cost
+  IL_00e0:  ldloca.s   '<>g__initLocal1'
+  IL_00e2:  ldc.i4.s   100
+  IL_00e4:  stfld      int32 Test00_02.ItemStruct::count
+  IL_00e9:  ldloc.s    '<>g__initLocal1'
+  IL_00eb:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<valuetype Test00_02.ItemStruct>::Add(!0)

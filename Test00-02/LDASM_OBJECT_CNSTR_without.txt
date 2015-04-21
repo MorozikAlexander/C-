@@ -1,0 +1,17 @@
+  IL_0059:  ldloc.s    ArrayList
+  IL_005b:  newobj     instance void Test00_02.Item::.ctor()
+  IL_0060:  stloc.s    '<>g__initLocal0'
+  IL_0062:  ldloc.s    '<>g__initLocal0'
+  IL_0064:  ldstr      "Item"
+  IL_0069:  callvirt   instance void Test00_02.Item::set_NameValue(string)
+  IL_006e:  nop
+  IL_006f:  ldloc.s    '<>g__initLocal0'
+  IL_0071:  ldc.i4.s   100
+  IL_0073:  callvirt   instance void Test00_02.Item::set_CostValue(int32)
+  IL_0078:  nop
+  IL_0079:  ldloc.s    '<>g__initLocal0'
+  IL_007b:  ldc.i4.s   100
+  IL_007d:  callvirt   instance void Test00_02.Item::set_CountValue(int32)
+  IL_0082:  nop
+  IL_0083:  ldloc.s    '<>g__initLocal0'
+  IL_0085:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class Test00_02.Item>::Add(!0)

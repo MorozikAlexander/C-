@@ -1,0 +1,6 @@
+  IL_009b:  ldloc.s    ArrayList
+  IL_009d:  ldstr      "Item"
+  IL_00a2:  ldc.i4.s   100
+  IL_00a4:  ldc.i4.s   100
+  IL_00a6:  newobj     instance void Test00_02.Item::.ctor(string, int32, int32)
+  IL_00ab:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class Test00_02.Item>::Add(!0)
