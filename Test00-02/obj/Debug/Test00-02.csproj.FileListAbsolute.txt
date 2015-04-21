@@ -1,0 +1,6 @@
+D:\C#\Solutions\MZtests\Test00-02\bin\Debug\Test00-02.exe.config
+D:\C#\Solutions\MZtests\Test00-02\bin\Debug\Test00-02.exe
+D:\C#\Solutions\MZtests\Test00-02\bin\Debug\Test00-02.pdb
+D:\C#\Solutions\MZtests\Test00-02\obj\Debug\Test00-02.csprojResolveAssemblyReference.cache
+D:\C#\Solutions\MZtests\Test00-02\obj\Debug\Test00-02.exe
+D:\C#\Solutions\MZtests\Test00-02\obj\Debug\Test00-02.pdb
