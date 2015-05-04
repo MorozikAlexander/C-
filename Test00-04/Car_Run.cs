@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Test00_04_Logistic
 {
-    public class Car_Run : Car, ITransport, ICollection<ICargo>
+    public class Car_Run : Car, ITransport
     {
         public int Speed { get; set; }
         public GPS Tgps { get; set; }

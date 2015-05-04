@@ -38,9 +38,21 @@ namespace Test00_04_Logistic
                 MaxBaggageLoad = 50,                
                 Tgps = new GPS() {
                     StartPoint = new Point {X = 0, Y = 0 },
-                    EndPoint = new Point {X = 0, Y = 0 } },
+                    EndPoint = new Point {X = 10, Y = 10 } },
                 Speed = 45 }
                 );
+
+            Mytraffic.Add(new Car_Run() { 
+                ID = 6,
+                Name = "LADA Kalina",
+                MaxPassengerLoad = 5,
+                MaxBaggageLoad = 150,
+                Tgps = new GPS() {
+                    StartPoint = new Point { X = 0, Y = 0 },
+                    EndPoint = new Point { X = 50, Y = 50 } },
+                Speed = 150 }
+                );
+
 
             Console.WriteLine(Mytraffic.Count);
 
