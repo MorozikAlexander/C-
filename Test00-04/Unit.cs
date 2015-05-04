@@ -8,5 +8,6 @@ namespace Test00_04_Logistic
     public abstract class Unit : IUnit
     {
         public int ID { get; set; }
+        public string Name { get; set; }
     }
 }
