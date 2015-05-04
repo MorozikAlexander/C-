@@ -8,8 +8,8 @@ namespace Test00_01
 {
     public class LinearFunction
     {
-        private double a = 0;
-        private double b = 0;
+        private double a = 0.0;
+        private double b = 0.0;
 
         public double ValueA
         {
