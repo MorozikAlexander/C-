@@ -7,8 +7,8 @@
     <ProjectGuid>{913E736F-36B9-426B-8B67-ACA76478FCE8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test00_04</RootNamespace>
-    <AssemblyName>Test00-04</AssemblyName>
+    <RootNamespace>Test00_04_Logistic</RootNamespace>
+    <AssemblyName>Test00-04-Logistic</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
