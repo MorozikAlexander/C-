@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Test00_04
+namespace Test00_04_Logistic
 {
 
     
@@ -15,6 +15,29 @@ namespace Test00_04
     {
         static void Main(string[] args)
         {
+            Traffic Mytraffic = new Traffic();
+
+            Mytraffic.Add(new Baggage() {
+                ID = 1,
+                CurrentLoad = 25 }
+                );
+
+            Mytraffic.Add(new Man() {
+                ID = 5,
+                LastName = "Ivanov",
+                FirstName = "Dmitry",
+                CurrentLoad = 90 }
+                );
+
+            Mytraffic.Add(new Man_Run() {
+                ID = 3,
+                LastName = "Bolt",
+                FirstName = "Usaine",
+                MaxPassengerLoad = 0,
+                MaxBaggageLoad = 50,
+                Speed = 45 }
+                );
+
             Console.ReadKey();
         }
     }
