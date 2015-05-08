@@ -58,6 +58,12 @@ namespace Test00_04_Logistic
 
             foreach (var i in Mytraffic)
             {
+              
+                 if (i is ITransport)
+                    Console.Write("#Транспорт:");
+                 else if (i is ICargo)
+                    Console.Write("#Багаж или пассажир:");
+                
                 Console.WriteLine(i.Name);
                 
             }

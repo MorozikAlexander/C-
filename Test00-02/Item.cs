@@ -33,7 +33,7 @@ namespace Test00_02
 
         public int CountValue
         {
-             get { return count; }
+            get { return count; }
             set { count = value; }
         }
 

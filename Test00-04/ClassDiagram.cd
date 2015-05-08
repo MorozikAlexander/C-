@@ -1,7 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Test00_04_Logistic.Unit">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Test00_04_Logistic.Unit.TypeOfUnit" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Unit.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Unit.cs</FileName>
@@ -9,7 +19,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Test00_04_Logistic.Baggage">
-    <Position X="5.25" Y="2.5" Width="1.5" />
+    <Position X="0.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Baggage.cs</FileName>
@@ -19,7 +29,7 @@
   <Class Name="Test00_04_Logistic.Man">
     <Position X="0.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Man.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -35,7 +45,7 @@
   <Class Name="Test00_04_Logistic.Car">
     <Position X="3" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Car.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -43,7 +53,7 @@
   <Class Name="Test00_04_Logistic.Car_Run">
     <Position X="3" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAABAAAAAAAAAABAAAAQAAA=</HashCode>
+      <HashCode>AAAACAAAAAQAAAAAACAAAAABAAAAAAAAAABAAAAQAAA=</HashCode>
       <FileName>Car_Run.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
