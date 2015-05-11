@@ -13,26 +13,22 @@ namespace CheckPoint01
 
         static void Main(string[] args)
         {
-            List<TransportUnit> BelAvia = new List<TransportUnit>();
 
-            BelAvia.Add(new BaggageUnit() {ID = 1, Name = "Baggage 1", Volume = 0.25, Weight = 15 });
+            TransportCompany BelAvia = new TransportCompany("BelaAvia");
+            BelAvia.Add(new BaggageUnit() { ID = 1, Name = "Baggage 1", Volume = 0.25, Weight = 15 });
+            BelAvia.Add(new AircraftUnit() { ID = 100001, Name = "Boeing 777" });
 
-
-            
-            BelAvia.Add(new AircraftUnit() {ID = 100001, Name = "Boeing 777" });
-
-            BelAvia.Add(new DriverUnit() {ID = 101, Name="John", LastName = "Smith",CarDriveLicense = true, VolumeCapacity =1, TrainDriveLicense = true,  });
-
+            BelAvia.Add(new DriverUnit() { ID = 101, Name = "John", LastName = "Smith", CarDriveLicense = true, VolumeCapacity = 1, TrainDriveLicense = true, });
 
             for (int i = 0; i < BelAvia.Count; i++)
-			
-            
+
+
                 if (BelAvia[i] is DriverUnit)
                     Console.WriteLine("{0} {1} {2} {3} {4}", BelAvia[i].GetType(), BelAvia[i].ID, BelAvia[i].Name, (BelAvia[i] as DriverUnit).LastName, ((DriverUnit)BelAvia[i]).CarDriveLicense);
                 else
                     Console.WriteLine("{0} {1}", BelAvia[i].ID, BelAvia[i].Name);
 
-            
+
             
             
 
