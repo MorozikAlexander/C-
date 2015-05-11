@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckPoint01_01
+namespace CheckPoint01
 {
     public class PassengerWagonUnit : BaggageWagonUnit , IhasPassenger
     {
