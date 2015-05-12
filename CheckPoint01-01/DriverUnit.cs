@@ -17,6 +17,10 @@ namespace CheckPoint01
             CarDriveLicense = false;
             TrainDriveLicense = false;
             AircraftDriveLicense = false;
+            Baggage = null;
+            WeightCapacity = 50;
+            VolumeCapacity = .2;
+
         }
     }
 }

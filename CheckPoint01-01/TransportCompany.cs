@@ -36,8 +36,7 @@ namespace CheckPoint01
             }
             set
             {
-                TUnits[index] = value;
-                
+                TUnits[index] = value;                
             }
         }
 
@@ -91,10 +90,5 @@ namespace CheckPoint01
         {
             CompanyName = CN;
         }
-
-
-
-
-
     }
 }

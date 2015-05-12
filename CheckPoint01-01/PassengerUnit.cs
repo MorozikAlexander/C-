@@ -12,6 +12,18 @@ namespace CheckPoint01
 
         public double WeightCapacity { get; set; }
         public double VolumeCapacity { get; set; }
-        List<BaggageUnit> Baggage = new List<BaggageUnit>();
+        public List<BaggageUnit> Baggage = new List<BaggageUnit>();
+
+        public PassengerUnit()
+        {
+            Baggage = null;
+            WeightCapacity = 50;
+            VolumeCapacity = .2;
+        }
+
+        /*public bool Load(BaggageUnit item)
+        {
+
+        }*/
     }
 }

@@ -10,7 +10,5 @@ namespace CheckPoint01
     {
         public double Weight { get; set; }
         public double Volume { get; set; }
-        //public int ID { get; set; }
-        //public string Name { get; set; }
     }
 }
