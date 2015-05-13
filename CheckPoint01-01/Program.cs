@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 
 namespace CheckPoint01
 {
-
     class Program
     {
-
-
         static void Main(string[] args)
         {
             TransportUnit temp1, temp2, temp3, temp4;
             TransportCompany BelAvia = new TransportCompany("BelaAvia");
 
-            temp1 = new BaggageUnit() { ID = 1, Name = "Baggage 1", Volume = 0.025, Weight = 15 };
+            temp1 = new BaggageUnit() { ID = 1, Name = "Baggage 1", Volume = 0.025, Weight = 15,  };
             temp2 = new BaggageUnit() { ID = 2, Name = "Baggage 2", Volume = 0.05, Weight = 25 };
             temp3 = new BaggageUnit() { ID = 3, Name = "Baggage 3", Volume = 0.1, Weight = 35 };
 
             temp4 = new DriverUnit() { ID = 100, Name = "Dima", LastName = "Medvedev", CarDriveLicense = true, VolumeCapacity = 0.2, WeightCapacity = 50 };
 
-            
 
-            
+
+
 
 
             //TransportUnit temp1 = new CarUnit() {CarDriver };
@@ -48,10 +45,10 @@ namespace CheckPoint01
                     Console.WriteLine("{0} {1}", BelAvia[i].ID, BelAvia[i].Name);
 
 
-            
-            
 
-            
+
+
+
             Console.ReadKey();
         }
     }

@@ -10,6 +10,7 @@ namespace CheckPoint01
     {
         public enum KindOfUnit { Baggage, Passenger, Driver, Car, Train, Aircraft };
 
+        public KindOfUnit kindofunit;
         public int ID { get; set; }
         public string Name { get; set; }
     }

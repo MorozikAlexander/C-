@@ -13,7 +13,7 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>TransportUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -36,7 +36,7 @@
   <Class Name="CheckPoint01.PassengerUnit">
     <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAQAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAQAAAAAQABAAgAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>PassengerUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.1" />
@@ -51,7 +51,7 @@
   <Class Name="CheckPoint01.CarUnit">
     <Position X="2.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAQAAAQAAAhAAAAEQAAAACAAAAAAAAIAAAIABAA=</HashCode>
+      <HashCode>AAAAEAQAAAQAQAhAAgAEQAAAACAAgAAAAAIAAAIABAA=</HashCode>
       <FileName>Car.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -59,7 +59,7 @@
   <Class Name="CheckPoint01.AircraftUnit">
     <Position X="4.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEEAQAAAQAAABAAAAEQAAAAAAAAAAAAAAAAAIABAA=</HashCode>
+      <HashCode>AAAEEAQAAAQAQABAAgAEQAAAAAAAgAAAAAAAAAIABAA=</HashCode>
       <FileName>AircraftUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -67,7 +67,7 @@
   <Class Name="CheckPoint01.BaggageWagonUnit">
     <Position X="6.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAQAAAAAAAAAAAAAAAAAACAAAAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAQAAAAAQAAAAgAAAAAAACAAgAAAAAIAAAAAAAA=</HashCode>
       <FileName>BaggageWagonUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -98,7 +98,7 @@
   <Class Name="CheckPoint01.TransportCompany">
     <Position X="9.75" Y="2.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AGIAQEAAAAAAABAQCAAABAQQAAAAAAAACAAAAABQIAA=</HashCode>
+      <HashCode>AGIAQEAAAAAAABAQCAAQBAQQAAAAAAAACAAAAABQIAA=</HashCode>
       <FileName>TransportCompany.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -120,7 +120,7 @@
   <Interface Name="CheckPoint01.IhasBaggage">
     <Position X="14" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAQAAAAAQAAAAgAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>IhasBaggage.cs</FileName>
     </TypeIdentifier>
   </Interface>

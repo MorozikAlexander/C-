@@ -12,6 +12,7 @@ namespace CheckPoint01
         double FuelCons { get; set; }
         double FuelValue { get; set; }
         
+        
 
 
     }

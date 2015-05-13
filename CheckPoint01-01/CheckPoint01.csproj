@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CheckPoint01</RootNamespace>
-    <AssemblyName>CheckPoint01-01</AssemblyName>
+    <AssemblyName>CheckPoint01</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -60,10 +60,13 @@
     <Compile Include="TransportCompany.cs" />
     <Compile Include="TransportUnit.cs" />
     <Compile Include="BaggageWagonUnit.cs" />
+    <Compile Include="TransportUnitComparerByID.cs" />
+    <Compile Include="TransportUnitComparerByName.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

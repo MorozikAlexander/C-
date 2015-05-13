@@ -90,5 +90,24 @@ namespace CheckPoint01
         {
             CompanyName = CN;
         }
+
+        protected void Sort(IComparer<TransportUnit> comparer)
+        {
+            var newList = TUnits.ToList();
+            newList.Sort(comparer);
+            TUnits = newList;
+        }
+
+        public void SortByID()
+        {
+            this.Sort(new TransportUnitComparerByID());
+        }
+
+        public void SortByID()
+        {
+            this.Sort(new TransportUnitComparerByName());
+        }
+
+
     }
 }
