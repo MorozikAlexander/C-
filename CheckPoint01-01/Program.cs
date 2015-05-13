@@ -10,6 +10,7 @@ namespace CheckPoint01
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(Console.ForegroundColor);
             TransportUnit temp1, temp2, temp3, temp4;
             TransportCompany BelAvia = new TransportCompany("BelaAvia");
 
@@ -19,7 +20,10 @@ namespace CheckPoint01
 
             temp4 = new DriverUnit() { ID = 100, Name = "Dima", LastName = "Medvedev", CarDriveLicense = true, VolumeCapacity = 0.2, WeightCapacity = 50 };
 
-
+            BelAvia.Add(temp1);
+            BelAvia.Add(temp2);
+            BelAvia.Add(temp3);
+            BelAvia.Add(temp4);
 
 
 
@@ -44,8 +48,11 @@ namespace CheckPoint01
                 else
                     Console.WriteLine("{0} {1}", BelAvia[i].ID, BelAvia[i].Name);
 
+            BelAvia.SortByID();
+            BelAvia.PrintUnits();
 
-
+            BelAvia.SortByName();
+            BelAvia.PrintUnits();
 
 
 

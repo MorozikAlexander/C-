@@ -103,9 +103,22 @@ namespace CheckPoint01
             this.Sort(new TransportUnitComparerByID());
         }
 
-        public void SortByID()
+        public void SortByName()
         {
             this.Sort(new TransportUnitComparerByName());
+        }
+
+        public void PrintUnits()
+        {
+            if (TUnits != null)
+            for (int i = 0; i < TUnits.Count; i++)
+            {
+                
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("{0,10}", TUnits[i].kindofunit);
+                Console.WriteLine("{0,3}{1,10}{2,15}", i+1, TUnits[i].ID, TUnits[i].Name);
+                
+            }
         }
 
 
