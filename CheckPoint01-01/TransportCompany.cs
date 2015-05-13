@@ -115,10 +115,25 @@ namespace CheckPoint01
             {
                 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("{0,10}", TUnits[i].kindofunit);
-                Console.WriteLine("{0,3}{1,10}{2,15}", i+1, TUnits[i].ID, TUnits[i].Name);
-                
+                Console.Write("{0,-10}", TUnits[i].kindofunit);
+                Console.Write("{0,-3}{1,10} ", i+1, TUnits[i].ID);
+                if (TUnits[i] is ManUnit)                
+                    //Console.WriteLine("{0,25}", String.Concat(TUnits[i].Name, (TUnits[i] as ManUnit).LastName));                
+                    Console.WriteLine("{0,-25}", (TUnits[i] as ManUnit).LastName + ' ' + TUnits[i].Name);                
+                else Console.WriteLine("{0,-25}", TUnits[i].Name);                
             }
+            Console.WriteLine();
+        }
+
+        public int CostValue<T>()
+        {
+            int CV = 0;
+            foreach (var item in TUnits)
+            {
+                if ((item is T) && (item is IisMaterialValue))
+                    CV += (item as IisMaterialValue).CostValue;
+            }
+            return CV;
         }
 
 

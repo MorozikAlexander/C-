@@ -19,7 +19,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CheckPoint01.BaggageUnit">
-    <Position X="2.25" Y="1.25" Width="1.5" />
+    <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>BaggageUnit.cs</FileName>
@@ -28,6 +28,12 @@
   </Class>
   <Class Name="CheckPoint01.ManUnit">
     <Position X="0.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="CheckPoint01.TransportUnit" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="0.688" />
+        <Point X="2" Y="0.688" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>ManUnit.cs</FileName>
@@ -51,8 +57,8 @@
   <Class Name="CheckPoint01.CarUnit">
     <Position X="2.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAQAAAQAQAhAAgAEQAAAACAAgAAAAAIAAAIABAA=</HashCode>
-      <FileName>Car.cs</FileName>
+      <HashCode>AAAAEAQAAAQAQAhAAgAEQAAAACAAgAAAAAIgAAIABAA=</HashCode>
+      <FileName>CarUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -81,7 +87,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CheckPoint01.LocomotiveUnit">
-    <Position X="8" Y="2.25" Width="1.5" />
+    <Position X="8" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>LocomotiveUnit.cs</FileName>
@@ -89,7 +95,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CheckPoint01.TrainUnit">
-    <Position X="8" Y="4.5" Width="1.5" />
+    <Position X="6.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>TrainUnit.cs</FileName>
@@ -98,7 +104,7 @@
   <Class Name="CheckPoint01.TransportCompany">
     <Position X="9.75" Y="2.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AGIAQEAFAAAAABAQCAAQBAQQAAAAAAAACAAAAABQIAI=</HashCode>
+      <HashCode>AGIAQEAFAAAAABAQCAAQBAQQAAAAAAAACAAgAABQIAI=</HashCode>
       <FileName>TransportCompany.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -125,17 +131,24 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IisTransport">
-    <Position X="14" Y="4.25" Width="1.5" />
+    <Position X="14.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>IisTransport.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IhasPassenger">
-    <Position X="14" Y="2.5" Width="1.5" />
+    <Position X="12" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>IhasPassenger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CheckPoint01.IisMaterialValue" Collapsed="true">
+    <Position X="12.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>IisMaterialValue.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

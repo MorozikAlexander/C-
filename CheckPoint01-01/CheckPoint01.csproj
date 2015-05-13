@@ -43,11 +43,12 @@
   <ItemGroup>
     <Compile Include="AircraftUnit.cs" />
     <Compile Include="BaggageUnit.cs" />
-    <Compile Include="Car.cs" />
+    <Compile Include="CarUnit.cs" />
     <Compile Include="DriverUnit.cs" />
     <Compile Include="IhasPassenger.cs" />
     <Compile Include="IisBaggage.cs" />
     <Compile Include="IhasBaggage.cs" />
+    <Compile Include="IisMaterialValue.cs" />
     <Compile Include="IisTransport.cs" />
     <Compile Include="ITransportUnit.cs" />
     <Compile Include="LocomotiveUnit.cs" />
@@ -66,7 +67,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckPoint01
 {
-    class CarUnit : TransportUnit , IisTransport , IisBaggage
+    class CarUnit : TransportUnit , IisTransport , IisBaggage, IisMaterialValue
     {
         public double WeightCapacity { get; set; }
         public double VolumeCapacity { get; set; }
@@ -14,7 +14,10 @@ namespace CheckPoint01
         public double Volume { get; set; }
         public double MaxSpeed { get; set; }
         public double FuelCons { get; set; }
+        public int CostValue { get; set; }
         public double FuelValue { get; set; }
+        //public int 
+        
 
         public DriverUnit CarDriver;
         List<BaggageUnit> Baggage = new List<BaggageUnit>();
@@ -34,5 +37,7 @@ namespace CheckPoint01
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
