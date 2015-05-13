@@ -12,5 +12,15 @@ namespace CheckPoint01
         public double VolumeCapacity { get; set; }
         public double Weight { get; set; }
         public double Volume { get; set; }
+
+
+        public double CurrentWeightValue { get; set; }
+
+        public double CurrentVolumeValue { get; set; }
+
+        public bool LoadBaggage(BaggageUnit item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

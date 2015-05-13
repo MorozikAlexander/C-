@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckPoint01
 {
-    interface IhasPassenger : IhasBaggage 
+    interface IhasPassenger : IhasBaggage
     {
         int PassengerCapacity { get; set; }
     }

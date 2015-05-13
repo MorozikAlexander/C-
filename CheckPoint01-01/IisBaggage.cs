@@ -8,8 +8,8 @@ namespace CheckPoint01
 {
     public interface IisBaggage : ITransportUnit
     {
-        public double Weight { get; set; }
-        public double Volume { get; set; }
+        double Weight { get; set; }
+        double Volume { get; set; }
 
     }
 }

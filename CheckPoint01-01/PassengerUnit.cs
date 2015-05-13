@@ -25,5 +25,35 @@ namespace CheckPoint01
         {
 
         }*/
+
+
+        public double CurrentWeightValue
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public double CurrentVolumeValue
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool LoadBaggage(BaggageUnit item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
