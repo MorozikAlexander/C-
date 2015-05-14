@@ -13,16 +13,22 @@ namespace CheckPoint01
         public double FuelCons { get; set; }
 
         public double FuelValue { get; set; }
-        
-        
 
 
-        
 
-        
 
-    
 
-        
+
+
+
+
+
+
+
+
+        public bool LoadDriver()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

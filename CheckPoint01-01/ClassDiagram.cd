@@ -35,7 +35,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ManUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,7 +60,7 @@
       <HashCode>AAAAEAQAAAQAQAhAAgAEQAAAACAAgAAAAAIgAAIABAA=</HashCode>
       <FileName>CarUnit.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.1" />
   </Class>
   <Class Name="CheckPoint01.AircraftUnit">
     <Position X="4.25" Y="4.25" Width="1.5" />
@@ -104,7 +104,7 @@
   <Class Name="CheckPoint01.TransportCompany">
     <Position X="10" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AWIAQEAFAAAAABAQCAAQBgQQAAAAAAAACAAgAABQIAI=</HashCode>
+      <HashCode>AGIAQEAFAAAAABAQCAAQBgQQAAAABAAACAAgAABQIAI=</HashCode>
       <FileName>TransportCompany.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -149,7 +149,7 @@
   <Interface Name="CheckPoint01.IisTransport">
     <Position X="14.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>IisTransport.cs</FileName>
     </TypeIdentifier>
   </Interface>

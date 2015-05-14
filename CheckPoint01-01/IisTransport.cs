@@ -11,9 +11,7 @@ namespace CheckPoint01
         double MaxSpeed { get; set; }
         double FuelCons { get; set; }
         double FuelValue { get; set; }
-        
-        
 
-
+        bool LoadDriver();
     }
 }

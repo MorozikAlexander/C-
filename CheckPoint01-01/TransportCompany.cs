@@ -158,20 +158,29 @@ namespace CheckPoint01
                 {
                     Console.ForegroundColor = color;
                     Console.Write("{0,2} {1,5} ", i + 1, (RangeList[i] as TransportUnit).ID);
-                    Console.Write("{0,10} ", (RangeList[i] as TransportUnit).kindofunit);
+                    Console.Write("{0,8} ", (RangeList[i] as TransportUnit).kindofunit);
                     
                     if (RangeList[i] is ManUnit)
                         //Console.WriteLine("{0,25}", String.Concat(TUnits[i].Name, (TUnits[i] as ManUnit).LastName));                
                         Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name + ' ' + (RangeList[i] as ManUnit).FirstName);
                     else Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name);
 
-                    if (RangeList[i] is IisTransport)
+                    if (RangeList[i] is AircraftUnit)
                     {
-                        Console.Write("{0,10}", (RangeList[i] as IisTransport).FuelCons);
-                        Console.Write("{0,10}", (RangeList[i] as IisTransport).MaxSpeed);
-                        Console.Write("{0,10}", (RangeList[i] as IisTransport).FuelValue);
+                        Console.Write("FC:{0,5} ", (RangeList[i] as IisTransport).FuelCons);
+                        Console.Write("MS:{0,5} ", (RangeList[i] as IisTransport).MaxSpeed);
+                        Console.Write("FV:{0,5} ", (RangeList[i] as IisTransport).FuelValue);
+                        Console.Write("VC:{0,5} ", (RangeList[i] as IisTransport).VolumeCapacity);
+                        Console.Write("WC:{0,5} ", (RangeList[i] as IisTransport).WeightCapacity);
+                    }
+                    else if (RangeList[i] is CarUnit)
+                    {
+                        Console.Write("FC:{0,5} ", (RangeList[i] as IisTransport).FuelCons);
+                        Console.Write("MS:{0,5} ", (RangeList[i] as IisTransport).MaxSpeed);
+                        Console.Write("CV:{0,7} ", (RangeList[i] as CarUnit).CostValue);
 
                     }
+
                     Console.WriteLine();
                 }
             Console.WriteLine();

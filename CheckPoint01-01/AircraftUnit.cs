@@ -33,5 +33,11 @@ namespace CheckPoint01
         {
             throw new NotImplementedException();
         }
+
+
+        public bool LoadDriver()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
