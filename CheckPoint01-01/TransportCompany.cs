@@ -94,8 +94,16 @@ namespace CheckPoint01
         protected void Sort(IComparer<TransportUnit> comparer)
         {
             var newList = TUnits.ToList();
+            
             newList.Sort(comparer);
             TUnits = newList;
+        }
+
+        public void SortByFuelCons<T>()
+        {
+            var newList = TUnits.OfType<T>();            
+            newList = from c in newList orderby (newList as IisTransport).FuelCons select c;
+
         }
 
         public void SortByID()
@@ -107,6 +115,8 @@ namespace CheckPoint01
         {
             this.Sort(new TransportUnitComparerByName());
         }
+
+
 
         public void PrintUnits()
         {
@@ -135,6 +145,23 @@ namespace CheckPoint01
             }
             return CV;
         }
+
+        public IEnumerable<T> ExtractUnits<T>()
+        {
+            //IEnumerable<T> dd = from c in TUnits where (c is T) select c;
+
+            //IEnumerable<T> Result = from c in TUnits where (c is T) select c;
+
+            //return from c in TUnits where (c is T) select c;
+
+            return TUnits.OfType<T>();
+            
+
+        }
+
+
+
+
 
 
     }
