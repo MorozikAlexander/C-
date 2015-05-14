@@ -31,7 +31,7 @@ namespace CheckPoint01
             temp2 = new BaggageUnit() { ID = 10001, Name = "Baggage 2", Volume = 0.05, Weight = 25 };
             temp3 = new BaggageUnit() { ID = 10002, Name = "Baggage 3", Volume = 0.1, Weight = 35 };
 
-            temp4 = new DriverUnit() { ID = 1000, Name = "Dima", LastName = "Medvedev", CarDriveLicense = true, VolumeCapacity = 0.2, WeightCapacity = 50 };
+            temp4 = new DriverUnit() { ID = 1000, Name = "Medvedev", FirstName = "Dima", CarDriveLicense = true, VolumeCapacity = 0.2, WeightCapacity = 50 };
 
             BelAvia.Add(temp1);
             BelAvia.Add(temp2);
@@ -41,7 +41,7 @@ namespace CheckPoint01
 
             BelAvia.Add(new AircraftUnit() { ID = 1, Name = "AN - 2", FuelCons = 94.5, MaxSpeed = 300 });
 
-            BelAvia.Add(new DriverUnit() { ID = 10001, Name = "John", LastName = "Smith", CarDriveLicense = true, VolumeCapacity = 1, TrainDriveLicense = true, });
+            BelAvia.Add(new DriverUnit() { ID = 10001, Name = "Smith", FirstName = "John", CarDriveLicense = true, VolumeCapacity = 1, TrainDriveLicense = true, });
 
             BelAvia.Add(new CarUnit() { ID = 100, Name = "BMW M5", CostValue = 89900, FuelCons = 17.5, MaxSpeed = 320 });
 
@@ -58,7 +58,7 @@ namespace CheckPoint01
 
 
                 if (BelAvia[i] is DriverUnit)
-                    Console.WriteLine("{0} {1} {2} {3} {4}", BelAvia[i].GetType(), BelAvia[i].ID, BelAvia[i].Name, (BelAvia[i] as DriverUnit).LastName, ((DriverUnit)BelAvia[i]).CarDriveLicense);
+                    Console.WriteLine("{0} {1} {2} {3} {4}", BelAvia[i].GetType(), BelAvia[i].ID, BelAvia[i].Name, (BelAvia[i] as DriverUnit).FirstName, ((DriverUnit)BelAvia[i]).CarDriveLicense);
                 else
                     Console.WriteLine("{0} {1}", BelAvia[i].ID, BelAvia[i].Name);
 
@@ -70,11 +70,12 @@ namespace CheckPoint01
 
             Console.WriteLine(BelAvia.CostValue<CarUnit>());
 
-            BelAvia.SortByFuelCons<CarUnit>();
-
-            BelAvia.SortByFuelCons<AircraftUnit>();
 
             BelAvia.SortByFuelCons<IisTransport>();
+
+            BelAvia.SortByMaxSpeed<CarUnit>();
+
+            BelAvia.SortByMaxSpeed<CarUnit>(150, 300);
 
             
 

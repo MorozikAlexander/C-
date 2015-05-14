@@ -112,22 +112,44 @@ namespace CheckPoint01
 
         public void SortByFuelCons<T>()
         {
+            SortByFuelCons<T>(0, 0);
+        }
+
+        public void SortByFuelCons<T>(double min, double max)
+        {
             IEnumerable<T> newList = new List<T>();
-            newList = TUnits.OfType<T>();
-            
+            newList = TUnits.OfType<T>();            
             if (newList != null)
             {
                 newList = from c in newList orderby ((c as IisTransport).FuelCons) select c;
+                if ((max > 0) && (max > min))
+                    newList = from c in newList where (((c as IisTransport).FuelCons >= min) && ((c as IisTransport).FuelCons <= max)) select c;
                 PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
             }            
+        }
+
+        public void SortByMaxSpeed<T>()
+        {
+            SortByMaxSpeed<T>(0, 0);
+        }
+
+        public void SortByMaxSpeed<T>(double min, double max)
+        {
+            IEnumerable<T> newList = new List<T>();
+            newList = TUnits.OfType<T>();
+            if (newList != null)
+            {
+                newList = from c in newList orderby ((c as IisTransport).MaxSpeed) select c;
+                if ((max > 0) && (max > min))
+                    newList = from c in newList where (((c as IisTransport).MaxSpeed >= min) && ((c as IisTransport).MaxSpeed <= max)) select c;
+                PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
+            }
         }
 
         public void PrintUnits()
         {
             PrintUnitsRange<TransportUnit>(TUnits.ToList<TransportUnit>(), ConsoleColor.Green);
         }
-
-
 
         public void PrintUnitsRange<T>(List<T> RangeList, ConsoleColor color)
         {            
@@ -140,12 +162,11 @@ namespace CheckPoint01
                     
                     if (RangeList[i] is ManUnit)
                         //Console.WriteLine("{0,25}", String.Concat(TUnits[i].Name, (TUnits[i] as ManUnit).LastName));                
-                        Console.Write("{0,-15}", (RangeList[i] as ManUnit).LastName + ' ' + (RangeList[i] as TransportUnit).Name);
+                        Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name + ' ' + (RangeList[i] as ManUnit).FirstName);
                     else Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name);
 
                     if (RangeList[i] is IisTransport)
                     {
-
                         Console.Write("{0,10}", (RangeList[i] as IisTransport).FuelCons);
                         Console.Write("{0,10}", (RangeList[i] as IisTransport).MaxSpeed);
                         Console.Write("{0,10}", (RangeList[i] as IisTransport).FuelValue);
@@ -154,10 +175,7 @@ namespace CheckPoint01
                     Console.WriteLine();
                 }
             Console.WriteLine();
-
         }
-
-
 
         public int CostValue<T>()
         {
@@ -169,24 +187,6 @@ namespace CheckPoint01
             }
             return CV;
         }
-
-        public IEnumerable<T> ExtractUnits<T>()
-        {
-            //IEnumerable<T> dd = from c in TUnits where (c is T) select c;
-
-            //IEnumerable<T> Result = from c in TUnits where (c is T) select c;
-
-            //return from c in TUnits where (c is T) select c;
-
-            return TUnits.OfType<T>();
-            
-
-        }
-
-
-
-
-
 
     }
 }
