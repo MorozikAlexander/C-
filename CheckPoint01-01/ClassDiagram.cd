@@ -102,50 +102,66 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint01.TransportCompany">
-    <Position X="9.75" Y="2.25" Width="1.75" />
+    <Position X="10" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AGIAQEAFAAAAABAQCAAQBAQQAAAAAAAACAAgAABQIAI=</HashCode>
+      <HashCode>AWIAQEAFAAAAABAQCAAQBgQQAAAAAAAACAAgAABQIAI=</HashCode>
       <FileName>TransportCompany.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="CheckPoint01.TransportUnitComparerByID" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>TransportUnitComparerByID.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CheckPoint01.TransportUnitComparerByName" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>TransportUnitComparerByName.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
   <Interface Name="CheckPoint01.ITransportUnit">
-    <Position X="11.75" Y="0.5" Width="1.5" />
+    <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ITransportUnit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IisBaggage">
-    <Position X="11.75" Y="2.25" Width="1.5" />
+    <Position X="12.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>IisBaggage.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IhasBaggage">
-    <Position X="14" Y="0.5" Width="1.5" />
+    <Position X="14.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAQAAAAAQAAAAgAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>IhasBaggage.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IisTransport">
-    <Position X="14.25" Y="4.5" Width="1.5" />
+    <Position X="14.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>IisTransport.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IhasPassenger">
-    <Position X="12" Y="4.25" Width="1.5" />
+    <Position X="12.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>IhasPassenger.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IisMaterialValue" Collapsed="true">
-    <Position X="12.25" Y="6.25" Width="1.5" />
+    <Position X="12.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>IisMaterialValue.cs</FileName>

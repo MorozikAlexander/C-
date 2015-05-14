@@ -36,15 +36,15 @@ namespace CheckPoint01
             BelAvia.Add(temp4);
 
 
-            BelAvia.Add(new AircraftUnit() { ID = 1, Name = "Boeing 777" });
+            BelAvia.Add(new AircraftUnit() { ID = 1, Name = "AN - 2", FuelCons = 94.5, MaxSpeed = 300 });
 
             BelAvia.Add(new DriverUnit() { ID = 10001, Name = "John", LastName = "Smith", CarDriveLicense = true, VolumeCapacity = 1, TrainDriveLicense = true, });
 
             BelAvia.Add(new CarUnit() { ID = 100, Name = "BMW M5", CostValue = 89900, FuelCons = 17.5, MaxSpeed = 320 });
 
-            BelAvia.Add(new CarUnit() { ID = 101, Name = "BMW M4", CostValue = 49900, FuelCons = 14.5, MaxSpeed = 300 });
+            BelAvia.Add(new CarUnit() { ID = 101, Name = "BMW M4", CostValue = 59900, FuelCons = 14.5, MaxSpeed = 300 });
 
-            BelAvia.Add(new CarUnit() { ID = 102, Name = "BMW M4", CostValue = 49900, FuelCons = 14.5, MaxSpeed = 300 });
+            BelAvia.Add(new CarUnit() { ID = 102, Name = "BMW M1", CostValue = 45900, FuelCons = 10.5, MaxSpeed = 270 });
 
 
             Console.WriteLine(BelAvia.Count);
@@ -65,6 +65,11 @@ namespace CheckPoint01
 
             Console.WriteLine(BelAvia.CostValue<CarUnit>());
 
+            BelAvia.SortByFuelCons<CarUnit>();
+
+            BelAvia.SortByFuelCons<AircraftUnit>();
+
+            BelAvia.SortByFuelCons<IisTransport>();
 
 
             Console.ReadKey();

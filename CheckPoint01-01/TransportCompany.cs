@@ -10,6 +10,7 @@ namespace CheckPoint01
     {
 
         private IList<TransportUnit> TUnits = new List<TransportUnit>();
+        //private List<TransportUnit> temp = new List<TransportUnit>();
         public string CompanyName { get; set; }
 
         #region IList<TransportUnit>
@@ -99,13 +100,6 @@ namespace CheckPoint01
             TUnits = newList;
         }
 
-        public void SortByFuelCons<T>()
-        {
-            var newList = TUnits.OfType<T>();            
-            newList = from c in newList orderby (newList as IisTransport).FuelCons select c;
-
-        }
-
         public void SortByID()
         {
             this.Sort(new TransportUnitComparerByID());
@@ -116,6 +110,48 @@ namespace CheckPoint01
             this.Sort(new TransportUnitComparerByName());
         }
 
+        public void SortByFuelCons<T>()
+        {
+            IEnumerable<T> newList = new List<T>();
+            newList = TUnits.OfType<T>();
+            
+            if (newList != null)
+            {
+                newList = from c in newList orderby ((c as IisTransport).FuelCons) select c;
+                PrintUnitsRange<T>(newList.ToList<T>());
+
+            }
+            
+            
+        }
+
+
+        public void PrintUnitsRange<T>(List<T> RangeList)
+        {            
+            if (RangeList != null)
+                for (int i = 0; i < RangeList.Count; i++)
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("{0,-10}", (RangeList[i] as TransportUnit).kindofunit);
+                    Console.Write("{0,-3}{1,10} ", i + 1, (RangeList[i] as TransportUnit).ID);
+                    if (RangeList[i] is ManUnit)
+                        //Console.WriteLine("{0,25}", String.Concat(TUnits[i].Name, (TUnits[i] as ManUnit).LastName));                
+                        Console.Write("{0,-25}", (RangeList[i] as ManUnit).LastName + ' ' + (RangeList[i] as TransportUnit).Name);
+                    else Console.Write("{0,-25}", (RangeList[i] as TransportUnit).Name);
+
+                    if (RangeList[i] is IisTransport)
+                    {
+
+                        Console.Write("{0,-10}", (RangeList[i] as IisTransport).FuelCons);
+                        Console.Write("{0,-10}", (RangeList[i] as IisTransport).MaxSpeed);
+
+                    }
+
+                    Console.WriteLine();
+                }
+            Console.WriteLine();
+
+        }
 
 
         public void PrintUnits()

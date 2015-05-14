@@ -24,6 +24,12 @@ namespace CheckPoint01
                 kindofunit = KindOfUnit.Aircraft;
             else if (this is DriverUnit)
                 kindofunit = KindOfUnit.Driver;
+            else if (this is CarUnit)
+                kindofunit = KindOfUnit.Car;
+            else if (this is TrainUnit)
+                kindofunit = KindOfUnit.Train;
+            else if (this is PassengerUnit)
+                kindofunit = KindOfUnit.Passenger;
         }
     }
 }
