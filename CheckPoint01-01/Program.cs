@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
 namespace CheckPoint01
 {
     class Program
@@ -46,6 +49,8 @@ namespace CheckPoint01
 
             BelAvia.Add(new CarUnit() { ID = 102, Name = "BMW M1", CostValue = 45900, FuelCons = 10.5, MaxSpeed = 270 });
 
+            BelAvia.Add(new CarUnit() { ID = 103, Name = "LADA Kalina", CostValue = 11000, FuelCons = 8.8, MaxSpeed = 99 });
+
 
             Console.WriteLine(BelAvia.Count);
 
@@ -70,6 +75,8 @@ namespace CheckPoint01
             BelAvia.SortByFuelCons<AircraftUnit>();
 
             BelAvia.SortByFuelCons<IisTransport>();
+
+            
 
 
             Console.ReadKey();

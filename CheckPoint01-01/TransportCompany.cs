@@ -118,35 +118,39 @@ namespace CheckPoint01
             if (newList != null)
             {
                 newList = from c in newList orderby ((c as IisTransport).FuelCons) select c;
-                PrintUnitsRange<T>(newList.ToList<T>());
+                PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
+            }            
+        }
 
-            }
-            
-            
+        public void PrintUnits()
+        {
+            PrintUnitsRange<TransportUnit>(TUnits.ToList<TransportUnit>(), ConsoleColor.Green);
         }
 
 
-        public void PrintUnitsRange<T>(List<T> RangeList)
+
+        public void PrintUnitsRange<T>(List<T> RangeList, ConsoleColor color)
         {            
             if (RangeList != null)
                 for (int i = 0; i < RangeList.Count; i++)
                 {
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write("{0,-10}", (RangeList[i] as TransportUnit).kindofunit);
-                    Console.Write("{0,-3}{1,10} ", i + 1, (RangeList[i] as TransportUnit).ID);
+                    Console.ForegroundColor = color;
+                    Console.Write("{0,2} {1,5} ", i + 1, (RangeList[i] as TransportUnit).ID);
+                    Console.Write("{0,10} ", (RangeList[i] as TransportUnit).kindofunit);
+                    
                     if (RangeList[i] is ManUnit)
                         //Console.WriteLine("{0,25}", String.Concat(TUnits[i].Name, (TUnits[i] as ManUnit).LastName));                
-                        Console.Write("{0,-25}", (RangeList[i] as ManUnit).LastName + ' ' + (RangeList[i] as TransportUnit).Name);
-                    else Console.Write("{0,-25}", (RangeList[i] as TransportUnit).Name);
+                        Console.Write("{0,-15}", (RangeList[i] as ManUnit).LastName + ' ' + (RangeList[i] as TransportUnit).Name);
+                    else Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name);
 
                     if (RangeList[i] is IisTransport)
                     {
 
-                        Console.Write("{0,-10}", (RangeList[i] as IisTransport).FuelCons);
-                        Console.Write("{0,-10}", (RangeList[i] as IisTransport).MaxSpeed);
+                        Console.Write("{0,10}", (RangeList[i] as IisTransport).FuelCons);
+                        Console.Write("{0,10}", (RangeList[i] as IisTransport).MaxSpeed);
+                        Console.Write("{0,10}", (RangeList[i] as IisTransport).FuelValue);
 
                     }
-
                     Console.WriteLine();
                 }
             Console.WriteLine();
@@ -154,22 +158,6 @@ namespace CheckPoint01
         }
 
 
-        public void PrintUnits()
-        {
-            if (TUnits != null)
-            for (int i = 0; i < TUnits.Count; i++)
-            {
-                
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("{0,-10}", TUnits[i].kindofunit);
-                Console.Write("{0,-3}{1,10} ", i+1, TUnits[i].ID);
-                if (TUnits[i] is ManUnit)                
-                    //Console.WriteLine("{0,25}", String.Concat(TUnits[i].Name, (TUnits[i] as ManUnit).LastName));                
-                    Console.WriteLine("{0,-25}", (TUnits[i] as ManUnit).LastName + ' ' + TUnits[i].Name);                
-                else Console.WriteLine("{0,-25}", TUnits[i].Name);                
-            }
-            Console.WriteLine();
-        }
 
         public int CostValue<T>()
         {

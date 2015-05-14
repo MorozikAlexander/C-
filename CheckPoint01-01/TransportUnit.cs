@@ -18,8 +18,6 @@ namespace CheckPoint01
 
         public TransportUnit()
         {
-
-
             if (this is AircraftUnit)
                 kindofunit = KindOfUnit.Aircraft;
             else if (this is DriverUnit)
