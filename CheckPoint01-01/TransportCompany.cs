@@ -9,8 +9,7 @@ namespace CheckPoint01
     public class TransportCompany : IList<TransportUnit>
     {
 
-        private IList<TransportUnit> TUnits = new List<TransportUnit>();
-        //private List<TransportUnit> temp = new List<TransportUnit>();
+        private IList<TransportUnit> TUnits = new List<TransportUnit>();        
         public string CompanyName { get; set; }
 
         #region IList<TransportUnit>
@@ -146,6 +145,25 @@ namespace CheckPoint01
             }
         }
 
+        public void SortByCostValue<T>()
+        {
+            SortByCostValue<T>(0, 0);
+        }
+
+        public void SortByCostValue<T>(double min, double max)
+        {
+            IEnumerable<T> newList = new List<T>();
+            newList = TUnits.OfType<T>();
+            
+            if (newList != null)            
+            {
+                newList = from c in newList orderby ((c as IisMaterialValue).CostValue) select c;
+                if ((max > 0) && (max > min))
+                    newList = from c in newList where (((c as IisMaterialValue).CostValue >= min) && ((c as IisMaterialValue).CostValue <= max)) select c;
+                PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
+            }
+        }
+
         public void PrintUnits()
         {
             PrintUnitsRange<TransportUnit>(TUnits.ToList<TransportUnit>(), ConsoleColor.Green);
@@ -196,6 +214,29 @@ namespace CheckPoint01
             }
             return CV;
         }
+
+        public double WeightCapacity<T>()
+        {
+            double WC = 0;
+            foreach (var item in TUnits)
+            {
+                if ((item is T) && (item is IhasBaggage))
+                    WC += (item as IhasBaggage).WeightCapacity;
+            }
+            return WC;
+        }
+
+        public double VolumeCapacity<T>()
+        {
+            double VC = 0;
+            foreach (var item in TUnits)
+            {
+                if ((item is T) && (item is IhasBaggage))
+                    VC += (item as IhasBaggage).VolumeCapacity;
+            }
+            return VC;
+        }
+
 
     }
 }

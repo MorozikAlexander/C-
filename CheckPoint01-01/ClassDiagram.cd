@@ -57,7 +57,7 @@
   <Class Name="CheckPoint01.CarUnit">
     <Position X="2.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAQAAAQAQAhAAgAEQAAAACAAgAAAAAIgAAIABAA=</HashCode>
+      <HashCode>AAAEEAQAAAQAQAhAAgAEQAAAACAAgAAAAAIgAAIABAA=</HashCode>
       <FileName>CarUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.1" />
@@ -89,7 +89,7 @@
   <Class Name="CheckPoint01.LocomotiveUnit">
     <Position X="8" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>LocomotiveUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -104,7 +104,7 @@
   <Class Name="CheckPoint01.TransportCompany">
     <Position X="10" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AGIAQEAFAAAAABAQCAAQBgQQAAAABAAACAAgAABQIAI=</HashCode>
+      <HashCode>AGIAQEAFAAAAABAQCCAQBgQQAAAABAAACAAgAABQIAI=</HashCode>
       <FileName>TransportCompany.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
