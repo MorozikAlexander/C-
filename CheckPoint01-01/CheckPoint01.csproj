@@ -50,7 +50,6 @@
     <Compile Include="IhasBaggage.cs" />
     <Compile Include="IisMaterialValue.cs" />
     <Compile Include="IisTransport.cs" />
-    <Compile Include="IisTransportWithTempomat.cs" />
     <Compile Include="ITransportUnit.cs" />
     <Compile Include="LocomotiveUnit.cs" />
     <Compile Include="ManUnit.cs" />
@@ -64,6 +63,7 @@
     <Compile Include="BaggageWagonUnit.cs" />
     <Compile Include="TransportUnitComparerByID.cs" />
     <Compile Include="TransportUnitComparerByName.cs" />
+    <Compile Include="TransportUnitComparerByType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

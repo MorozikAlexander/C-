@@ -93,10 +93,14 @@ namespace CheckPoint01
 
         protected void Sort(IComparer<TransportUnit> comparer)
         {
-            var newList = TUnits.ToList();
-            
+            var newList = TUnits.ToList();            
             newList.Sort(comparer);
             TUnits = newList;
+        }
+
+        public void SortByType()
+        {
+            this.Sort(new TransportUnitComparerByType());
         }
 
         public void SortByID()
@@ -176,13 +180,12 @@ namespace CheckPoint01
 
             if (newList != null)
             {
-                newList = from c in newList orderby ((c as IisMaterialValue).CostValue) select c;
+                newList = from c in newList orderby ((c as IisTransport).WayRange) select c;
                 if ((max > 0) && (max > min))
-                    newList = from c in newList where (((c as IisMaterialValue).CostValue >= min) && ((c as IisMaterialValue).CostValue <= max)) select c;
+                    newList = from c in newList where (((c as IisTransport).WayRange >= min) && ((c as IisTransport).WayRange <= max)) select c;
                 PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
             }
         }
-
 
         public void PrintUnits()
         {
@@ -209,7 +212,10 @@ namespace CheckPoint01
                         Console.Write("MS:{0,5} ", (RangeList[i] as IisTransport).MaxSpeed);
                         Console.Write("FV:{0,5} ", (RangeList[i] as IisTransport).FuelValue);
                         Console.Write("VC:{0,5} ", (RangeList[i] as IisTransport).VolumeCapacity);
-                        Console.Write("WC:{0,5} ", (RangeList[i] as IisTransport).WeightCapacity);
+                        Console.WriteLine("WC:{0,5} ", (RangeList[i] as IisTransport).WeightCapacity);
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.Write("          RANGE:{0,30} km", (RangeList[i] as IisTransport).WayRange);
+                        Console.ForegroundColor = color;
                     }
                     else if (RangeList[i] is CarUnit)
                     {
@@ -256,7 +262,5 @@ namespace CheckPoint01
             }
             return VC;
         }
-
-
     }
 }

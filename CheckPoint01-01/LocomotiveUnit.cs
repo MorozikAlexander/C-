@@ -14,7 +14,7 @@ namespace CheckPoint01
 
         public double FuelValue { get; set; }
 
-
+        public double WayRange { get; set; }
 
 
 
@@ -29,6 +29,6 @@ namespace CheckPoint01
         public bool LoadDriver()
         {
             throw new NotImplementedException();
-        }
+        }        
     }
 }

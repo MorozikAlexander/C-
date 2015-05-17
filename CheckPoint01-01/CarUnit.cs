@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckPoint01
 {
-    class CarUnit : TransportUnit , IisTransport , IisBaggage, IhasBaggage, IisMaterialValue
+    class CarUnit : TransportUnit , IisTransport , IisBaggage, IisMaterialValue
     {
         public double WeightCapacity { get; set; }
         public double VolumeCapacity { get; set; }
@@ -46,6 +46,19 @@ namespace CheckPoint01
         public bool LoadDriver()
         {
             throw new NotImplementedException();
+        }
+
+
+        public double WayRange
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
