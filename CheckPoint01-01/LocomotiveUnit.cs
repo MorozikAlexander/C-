@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckPoint01
 {
-    public class LocomotiveUnit : PassengerWagonUnit , IisTransport
+    public class LocomotiveUnit : PassengerWagonUnit , IisTransport 
     {
         public double MaxSpeed { get; set; }
 
@@ -26,9 +26,11 @@ namespace CheckPoint01
 
 
 
-        public bool LoadDriver()
+
+
+        public bool LoadDriver(DriverUnit item)
         {
             throw new NotImplementedException();
-        }        
+        }
     }
 }

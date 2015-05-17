@@ -43,10 +43,6 @@ namespace CheckPoint01
 
 
 
-        public bool LoadDriver()
-        {
-            throw new NotImplementedException();
-        }
 
 
         public double WayRange
@@ -59,6 +55,18 @@ namespace CheckPoint01
             {
                 throw new NotImplementedException();
             }
+        }
+
+
+        public bool LoadDriver(DriverUnit item)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public bool LoadPassenger(PassengerUnit item)
+        {
+            throw new NotImplementedException();
         }
     }
 }

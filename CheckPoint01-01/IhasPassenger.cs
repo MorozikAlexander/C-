@@ -9,5 +9,7 @@ namespace CheckPoint01
     interface IhasPassenger : IhasBaggage
     {
         int PassengerCapacity { get; set; }
+
+        bool LoadPassenger(PassengerUnit item);
     }
 }

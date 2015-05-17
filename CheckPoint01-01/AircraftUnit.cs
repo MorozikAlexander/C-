@@ -58,7 +58,12 @@ namespace CheckPoint01
             throw new NotImplementedException();
         }
 
-        public bool LoadDriver()
+        public bool LoadDriver(DriverUnit item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool LoadPassenger(PassengerUnit item)
         {
             throw new NotImplementedException();
         }

@@ -9,5 +9,11 @@ namespace CheckPoint01
     public class PassengerWagonUnit : BaggageWagonUnit , IhasPassenger
     {
         public int PassengerCapacity { get; set; }
+
+
+        public bool LoadPassenger(PassengerUnit item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
