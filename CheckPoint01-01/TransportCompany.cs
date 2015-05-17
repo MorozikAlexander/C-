@@ -164,6 +164,26 @@ namespace CheckPoint01
             }
         }
 
+        public void SortByWayRange<T>()
+        {
+            SortByWayRange<T>(0, 0);
+        }
+
+        public void SortByWayRange<T>(double min, double max)
+        {
+            IEnumerable<T> newList = new List<T>();
+            newList = TUnits.OfType<T>();
+
+            if (newList != null)
+            {
+                newList = from c in newList orderby ((c as IisMaterialValue).CostValue) select c;
+                if ((max > 0) && (max > min))
+                    newList = from c in newList where (((c as IisMaterialValue).CostValue >= min) && ((c as IisMaterialValue).CostValue <= max)) select c;
+                PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
+            }
+        }
+
+
         public void PrintUnits()
         {
             PrintUnitsRange<TransportUnit>(TUnits.ToList<TransportUnit>(), ConsoleColor.Green);
