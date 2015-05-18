@@ -91,6 +91,7 @@ namespace CheckPoint01
             CompanyName = CN;
         }
 
+        #region Sorting
         protected void Sort(IComparer<TransportUnit> comparer)
         {
             var newList = TUnits.ToList();            
@@ -186,7 +187,9 @@ namespace CheckPoint01
                 PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
             }
         }
+        #endregion
 
+        #region Prints
         public void PrintUnits()
         {
             PrintUnitsRange<TransportUnit>(TUnits.ToList<TransportUnit>(), ConsoleColor.Green);
@@ -201,8 +204,7 @@ namespace CheckPoint01
                     Console.Write("{0,2} {1,5} ", i + 1, (RangeList[i] as TransportUnit).ID);
                     Console.Write("{0,8} ", (RangeList[i] as TransportUnit).kindofunit);
                     
-                    if (RangeList[i] is ManUnit)
-                        //Console.WriteLine("{0,25}", String.Concat(TUnits[i].Name, (TUnits[i] as ManUnit).LastName));                
+                    if (RangeList[i] is ManUnit)                        
                         Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name + ' ' + (RangeList[i] as ManUnit).FirstName);
                     else Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name);
 
@@ -222,14 +224,30 @@ namespace CheckPoint01
                         Console.Write("FC:{0,5} ", (RangeList[i] as IisTransport).FuelCons);
                         Console.Write("MS:{0,5} ", (RangeList[i] as IisTransport).MaxSpeed);
                         Console.Write("CV:{0,7} ", (RangeList[i] as CarUnit).CostValue);
+                    }
+                    else if (RangeList[i] is DriverUnit)
+                    {
+                        Console.Write("Drive lisences: ");
+                        if ((RangeList[i] as DriverUnit).CarDriveLicense)
+                            Console.Write(" #CAR# ");
+                        if ((RangeList[i] as DriverUnit).TrainDriveLicense)
+                            Console.Write(" #TRAIN# ");
+                        if ((RangeList[i] as DriverUnit).AircraftDriveLicense)
+                            Console.Write(" #AIRCRAFT# ");                        
+                    }
+                    else if (RangeList[i] is BaggageUnit)
+                    {
+                        Console.Write("VOLUME:{0,7} ", (RangeList[i] as BaggageUnit).Volume);
+                        Console.Write("WEIGHT:{0,7} ", (RangeList[i] as BaggageUnit).Weight);
 
                     }
-
                     Console.WriteLine();
                 }
             Console.WriteLine();
         }
+        #endregion
 
+        #region Values
         public int CostValue<T>()
         {
             int CV = 0;
@@ -262,5 +280,6 @@ namespace CheckPoint01
             }
             return VC;
         }
+        #endregion
     }
 }

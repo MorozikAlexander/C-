@@ -47,8 +47,8 @@ namespace CheckPoint01
         public double CurrentWeightValue { get; set; }
         public double CurrentVolumeValue { get; set; }
 
-        public DriverUnit Pilot1 { get; set; }
-        public DriverUnit Pilot2 { get; set; }
+        public DriverUnit Pilot1;
+        public DriverUnit Pilot2; 
 
         List<BaggageUnit> Baggage = new List<BaggageUnit>();
         List<PassengerUnit> Passengers = new List<PassengerUnit>();

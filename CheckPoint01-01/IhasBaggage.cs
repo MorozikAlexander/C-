@@ -11,6 +11,8 @@ namespace CheckPoint01
         double WeightCapacity { get; set; }
         double VolumeCapacity { get; set; }
 
+        
+
         double CurrentWeightValue { get; set; }
         double CurrentVolumeValue { get; set; }
 

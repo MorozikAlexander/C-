@@ -172,8 +172,6 @@
     <InheritanceLine Type="CheckPoint01.IhasBaggage" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
         <Point X="11.75" Y="4.511" />
-        <Point X="11.75" Y="4.627" />
-        <Point X="11.75" Y="4.627" />
         <Point X="11.75" Y="4.75" />
       </Path>
     </InheritanceLine>
