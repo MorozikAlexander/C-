@@ -31,8 +31,8 @@ namespace CheckPoint01
                 kindofunit = KindOfUnit.Train;
             else if (this is PassengerUnit)
                 kindofunit = KindOfUnit.Passenger;
-
-            
+            else if (this is BaggageUnit)
+                kindofunit = KindOfUnit.Baggage;            
         }
     }
 }
