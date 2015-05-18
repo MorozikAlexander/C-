@@ -23,8 +23,7 @@ namespace CheckPoint01
              * 
              */
 
-            Console.WriteLine(Console.ForegroundColor);
-            TransportUnit temp1, temp2, temp3, temp4;
+            Console.WriteLine(Console.ForegroundColor);            
             TransportCompany BelAvia = new TransportCompany("BelaAvia");
 
             BelAvia.Add(new BaggageUnit() { ID = 10000, Name = "Baggage", Volume = 0.025, Weight = 15 });
