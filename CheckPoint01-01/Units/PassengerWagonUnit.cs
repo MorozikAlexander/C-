@@ -12,12 +12,12 @@ namespace CheckPoint01
 
         public PassengerWagonUnit()
         {
-            kindofunit = KindOfUnit.PassengerWagon;
+            UnitKind = KindOfUnit.PassengerWagon;
         }
 
         public bool LoadPassenger(PassengerUnit item)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

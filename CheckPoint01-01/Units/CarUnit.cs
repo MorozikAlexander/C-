@@ -26,12 +26,7 @@ namespace CheckPoint01
 
         public CarUnit()
         {
-            kindofunit = KindOfUnit.Car;
-        }
-
-        public bool LoadBaggage(BaggageUnit item)
-        {
-            return true;
+            UnitKind = KindOfUnit.Car;
         }
 
         public bool LoadDriver(DriverUnit item)
@@ -44,9 +39,14 @@ namespace CheckPoint01
             else return false;
         }
 
+        public bool LoadBaggage(BaggageUnit item)
+        {
+            return true;
+        }
+
         public bool LoadPassenger(PassengerUnit item)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

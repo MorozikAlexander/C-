@@ -24,7 +24,7 @@ namespace CheckPoint01
 
         public AircraftUnit()
         {
-            kindofunit = KindOfUnit.Aircraft;
+            UnitKind = KindOfUnit.Aircraft;
         }
 
         public double FuelValue
@@ -55,17 +55,17 @@ namespace CheckPoint01
 
         public bool LoadBaggage(BaggageUnit item)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public bool LoadDriver(DriverUnit item)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public bool LoadPassenger(PassengerUnit item)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

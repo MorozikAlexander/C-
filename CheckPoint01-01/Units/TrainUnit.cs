@@ -14,7 +14,7 @@ namespace CheckPoint01
 
         public TrainUnit()
         {
-            kindofunit = KindOfUnit.Train;
+            UnitKind = KindOfUnit.Train;
         }
     }
 }

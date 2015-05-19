@@ -13,7 +13,7 @@ namespace CheckPoint01
 
         public BaggageUnit()
         {
-            kindofunit = KindOfUnit.Baggage;
+            UnitKind = KindOfUnit.Baggage;
         }
     }
 }

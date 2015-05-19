@@ -19,12 +19,12 @@ namespace CheckPoint01
             Baggage = null;
             WeightCapacity = 50;
             VolumeCapacity = .2;
-            kindofunit = KindOfUnit.Passenger;
+            UnitKind = KindOfUnit.Passenger;
         }
 
         public bool LoadBaggage(BaggageUnit item)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

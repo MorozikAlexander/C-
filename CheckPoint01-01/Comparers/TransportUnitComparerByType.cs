@@ -10,7 +10,7 @@ namespace CheckPoint01
     {
         public int Compare(TransportUnit x, TransportUnit y)
         {
-            return String.Compare(x.kindofunit.ToString(), y.kindofunit.ToString());
+            return String.Compare(x.UnitKind.ToString(), y.UnitKind.ToString());
         }
     }
 }

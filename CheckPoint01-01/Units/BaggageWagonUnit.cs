@@ -15,12 +15,12 @@ namespace CheckPoint01
 
         public BaggageWagonUnit()
         {
-            kindofunit = KindOfUnit.BaggageWagon;
+            UnitKind = KindOfUnit.BaggageWagon;
         }
 
         public bool LoadBaggage(BaggageUnit item)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

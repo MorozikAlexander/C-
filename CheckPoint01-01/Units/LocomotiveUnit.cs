@@ -15,12 +15,12 @@ namespace CheckPoint01
 
         public LocomotiveUnit()
         {
-            kindofunit = KindOfUnit.Locomotive;
+            UnitKind = KindOfUnit.Locomotive;
         }
 
         public bool LoadDriver(DriverUnit item)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

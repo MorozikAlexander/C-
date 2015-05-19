@@ -6,32 +6,17 @@ using System.Threading.Tasks;
 
 namespace CheckPoint01
 {
-    public class TransportCompany : IList<TransportUnit>
+    public class TransportCompany
     {
-        private IList<TransportUnit> TUnits = new List<TransportUnit>();        
+        private List<TransportUnit> TUnits = new List<TransportUnit>();        
         public string CompanyName { get; set; }
 
-        public TransportCompany(string CN)
+        public TransportCompany(string companyname)
         {
-            CompanyName = CN;
+            CompanyName = companyname;
         }
 
-        #region IList<TransportUnit>
-        public int IndexOf(TransportUnit item)
-        {
-            return TUnits.IndexOf(item);
-        }
-
-        public void Insert(int index, TransportUnit item)
-        {
-            TUnits.Insert(index, item);
-        }
-
-        public void RemoveAt(int index)
-        {
-            TUnits.RemoveAt(index);
-        }        
-
+        #region TUnits methods
         public TransportUnit this[int index]
         {
             get
@@ -59,43 +44,16 @@ namespace CheckPoint01
             return TUnits.Contains(item);
         }
 
-        public void CopyTo(TransportUnit[] array, int arrayIndex)
-        {
-            TUnits.CopyTo(array, arrayIndex);
-        }
-
         public int Count
         {
             get { return TUnits.Count; }
-        }
-
-        public bool IsReadOnly
-        {
-            get { return TUnits.IsReadOnly; }
-        }
-
-        public bool Remove(TransportUnit item)
-        {
-            return TUnits.Remove(item);
-        }
-
-        public IEnumerator<TransportUnit> GetEnumerator()
-        {
-            return TUnits.GetEnumerator();
-        }
-
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
         }
         #endregion
 
         #region Sorting
         protected void Sort(IComparer<TransportUnit> comparer)
         {
-            var newList = TUnits.ToList();            
-            newList.Sort(comparer);
-            TUnits = newList;
+            TUnits.Sort(comparer);
         }
 
         public void SortByType()
@@ -124,7 +82,7 @@ namespace CheckPoint01
             newList = TUnits.OfType<T>();            
             if (newList.Count<T>() > 0)
             {
-                newList = from c in newList orderby ((c as IisTransport).FuelCons) select c;
+                newList = from c in newList where (c is IisTransport) orderby ((c as IisTransport).FuelCons) select c;
                 if ((max > 0) && (max > min))
                     newList = from c in newList where (((c as IisTransport).FuelCons >= min) && ((c as IisTransport).FuelCons <= max)) select c;
                 PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
@@ -142,7 +100,7 @@ namespace CheckPoint01
             newList = TUnits.OfType<T>();
             if (newList.Count<T>() > 0)
             {
-                newList = from c in newList orderby ((c as IisTransport).MaxSpeed) select c;
+                newList = from c in newList where (c is IisTransport) orderby ((c as IisTransport).MaxSpeed) select c;
                 if ((max > 0) && (max > min))
                     newList = from c in newList where (((c as IisTransport).MaxSpeed >= min) && ((c as IisTransport).MaxSpeed <= max)) select c;
                 PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
@@ -160,7 +118,7 @@ namespace CheckPoint01
             newList = TUnits.OfType<T>();
             if (newList.Count<T>() > 0)            
             {
-                newList = from c in newList orderby ((c as IisMaterialValue).CostValue) select c;
+                newList = from c in newList where (c is IisMaterialValue) orderby ((c as IisMaterialValue).CostValue) select c;
                 if ((max > 0) && (max > min))
                     newList = from c in newList where (((c as IisMaterialValue).CostValue >= min) && ((c as IisMaterialValue).CostValue <= max)) select c;
                 PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
@@ -178,7 +136,7 @@ namespace CheckPoint01
             newList = TUnits.OfType<T>();
             if (newList.Count<T>() > 0)
             {
-                newList = from c in newList orderby ((c as IisTransport).WayRange) select c;
+                newList = from c in newList where (c is IisTransport) orderby ((c as IisTransport).WayRange) select c;
                 if ((max > 0) && (max > min))
                     newList = from c in newList where (((c as IisTransport).WayRange >= min) && ((c as IisTransport).WayRange <= max)) select c;
                 PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
@@ -199,7 +157,7 @@ namespace CheckPoint01
                 {
                     Console.ForegroundColor = color;
                     Console.Write("{0,2} {1,5} ", i + 1, (RangeList[i] as TransportUnit).ID);
-                    Console.Write("{0,8} ", (RangeList[i] as TransportUnit).kindofunit);
+                    Console.Write("{0,8} ", (RangeList[i] as TransportUnit).UnitKind);
 
                     if (RangeList[i] is ManUnit) Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name + ' ' + (RangeList[i] as ManUnit).FirstName);
                     else Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name);
@@ -243,35 +201,35 @@ namespace CheckPoint01
         #region Values
         public int CostValue<T>()
         {
-            int CV = 0;
+            int costvalue = 0;
             foreach (var item in TUnits)
             {
                 if ((item is T) && (item is IisMaterialValue))
-                    CV += (item as IisMaterialValue).CostValue;
+                    costvalue += (item as IisMaterialValue).CostValue;
             }
-            return CV;
+            return costvalue;
         }
 
         public double WeightCapacity<T>()
         {
-            double WC = 0;
+            double weightcapacity = 0;
             foreach (var item in TUnits)
             {
                 if ((item is T) && (item is IhasBaggage))
-                    WC += (item as IhasBaggage).WeightCapacity;
+                    weightcapacity += (item as IhasBaggage).WeightCapacity;
             }
-            return WC;
+            return weightcapacity;
         }
 
         public double VolumeCapacity<T>()
         {
-            double VC = 0;
+            double volumecapacity = 0;
             foreach (var item in TUnits)
             {
                 if ((item is T) && (item is IhasBaggage))
-                    VC += (item as IhasBaggage).VolumeCapacity;
+                    volumecapacity += (item as IhasBaggage).VolumeCapacity;
             }
-            return VC;
+            return volumecapacity;
         }
         #endregion
     }
