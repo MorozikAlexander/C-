@@ -8,47 +8,18 @@ namespace CheckPoint01
 {
     public class PassengerUnit : ManUnit , IhasBaggage
     {
-        
-
+        public List<BaggageUnit> Baggage = new List<BaggageUnit>();        
         public double WeightCapacity { get; set; }
         public double VolumeCapacity { get; set; }
-        public List<BaggageUnit> Baggage = new List<BaggageUnit>();
+        public double CurrentWeightValue { get; set; }
+        public double CurrentVolumeValue { get; set; }        
 
         public PassengerUnit()
         {
             Baggage = null;
             WeightCapacity = 50;
             VolumeCapacity = .2;
-        }
-
-        /*public bool Load(BaggageUnit item)
-        {
-
-        }*/
-
-
-        public double CurrentWeightValue
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public double CurrentVolumeValue
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            kindofunit = KindOfUnit.Passenger;
         }
 
         public bool LoadBaggage(BaggageUnit item)

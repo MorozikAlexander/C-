@@ -9,6 +9,5 @@ namespace CheckPoint01
     public abstract class ManUnit : TransportUnit
     {
         public string FirstName { get; set; }
-
     }
 }

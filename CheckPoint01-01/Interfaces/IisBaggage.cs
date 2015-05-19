@@ -10,6 +10,5 @@ namespace CheckPoint01
     {
         double Weight { get; set; }
         double Volume { get; set; }
-
     }
 }

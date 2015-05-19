@@ -22,7 +22,6 @@ namespace CheckPoint01
              * 
              * 
              */
-
             Console.WriteLine(Console.ForegroundColor);            
             TransportCompany BelAvia = new TransportCompany("BelaAvia");
 

@@ -10,6 +10,10 @@ namespace CheckPoint01
     {
         public int PassengerCapacity { get; set; }
 
+        public PassengerWagonUnit()
+        {
+            kindofunit = KindOfUnit.PassengerWagon;
+        }
 
         public bool LoadPassenger(PassengerUnit item)
         {

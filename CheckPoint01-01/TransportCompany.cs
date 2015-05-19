@@ -8,9 +8,13 @@ namespace CheckPoint01
 {
     public class TransportCompany : IList<TransportUnit>
     {
-
         private IList<TransportUnit> TUnits = new List<TransportUnit>();        
         public string CompanyName { get; set; }
+
+        public TransportCompany(string CN)
+        {
+            CompanyName = CN;
+        }
 
         #region IList<TransportUnit>
         public int IndexOf(TransportUnit item)
@@ -86,11 +90,6 @@ namespace CheckPoint01
         }
         #endregion
 
-        public TransportCompany(string CN)
-        {
-            CompanyName = CN;
-        }
-
         #region Sorting
         protected void Sort(IComparer<TransportUnit> comparer)
         {
@@ -123,7 +122,7 @@ namespace CheckPoint01
         {
             IEnumerable<T> newList = new List<T>();
             newList = TUnits.OfType<T>();            
-            if (newList != null)
+            if (newList.Count<T>() > 0)
             {
                 newList = from c in newList orderby ((c as IisTransport).FuelCons) select c;
                 if ((max > 0) && (max > min))
@@ -141,7 +140,7 @@ namespace CheckPoint01
         {
             IEnumerable<T> newList = new List<T>();
             newList = TUnits.OfType<T>();
-            if (newList != null)
+            if (newList.Count<T>() > 0)
             {
                 newList = from c in newList orderby ((c as IisTransport).MaxSpeed) select c;
                 if ((max > 0) && (max > min))
@@ -159,8 +158,7 @@ namespace CheckPoint01
         {
             IEnumerable<T> newList = new List<T>();
             newList = TUnits.OfType<T>();
-            
-            if (newList != null)            
+            if (newList.Count<T>() > 0)            
             {
                 newList = from c in newList orderby ((c as IisMaterialValue).CostValue) select c;
                 if ((max > 0) && (max > min))
@@ -178,8 +176,7 @@ namespace CheckPoint01
         {
             IEnumerable<T> newList = new List<T>();
             newList = TUnits.OfType<T>();
-
-            if (newList != null)
+            if (newList.Count<T>() > 0)
             {
                 newList = from c in newList orderby ((c as IisTransport).WayRange) select c;
                 if ((max > 0) && (max > min))
@@ -203,9 +200,8 @@ namespace CheckPoint01
                     Console.ForegroundColor = color;
                     Console.Write("{0,2} {1,5} ", i + 1, (RangeList[i] as TransportUnit).ID);
                     Console.Write("{0,8} ", (RangeList[i] as TransportUnit).kindofunit);
-                    
-                    if (RangeList[i] is ManUnit)                        
-                        Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name + ' ' + (RangeList[i] as ManUnit).FirstName);
+
+                    if (RangeList[i] is ManUnit) Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name + ' ' + (RangeList[i] as ManUnit).FirstName);
                     else Console.Write("{0,-15}", (RangeList[i] as TransportUnit).Name);
 
                     if (RangeList[i] is AircraftUnit)
@@ -213,8 +209,8 @@ namespace CheckPoint01
                         Console.Write("FC:{0,5} ", (RangeList[i] as IisTransport).FuelCons);
                         Console.Write("MS:{0,5} ", (RangeList[i] as IisTransport).MaxSpeed);
                         Console.Write("FV:{0,5} ", (RangeList[i] as IisTransport).FuelValue);
-                        Console.Write("VC:{0,5} ", (RangeList[i] as IisTransport).VolumeCapacity);
-                        Console.WriteLine("WC:{0,5} ", (RangeList[i] as IisTransport).WeightCapacity);
+                        Console.Write("VC:{0,5} ", (RangeList[i] as IhasPassenger).VolumeCapacity);
+                        Console.WriteLine("WC:{0,5} ", (RangeList[i] as IhasPassenger).WeightCapacity);
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.Write("          RANGE:{0,30} km", (RangeList[i] as IisTransport).WayRange);
                         Console.ForegroundColor = color;
@@ -228,19 +224,16 @@ namespace CheckPoint01
                     else if (RangeList[i] is DriverUnit)
                     {
                         Console.Write("Drive lisences: ");
-                        if ((RangeList[i] as DriverUnit).CarDriveLicense)
-                            Console.Write(" #CAR# ");
-                        if ((RangeList[i] as DriverUnit).TrainDriveLicense)
-                            Console.Write(" #TRAIN# ");
-                        if ((RangeList[i] as DriverUnit).AircraftDriveLicense)
-                            Console.Write(" #AIRCRAFT# ");                        
+                        if ((RangeList[i] as DriverUnit).CarDriveLicense) Console.Write(" #CAR# ");
+                        if ((RangeList[i] as DriverUnit).TrainDriveLicense) Console.Write(" #TRAIN# ");
+                        if ((RangeList[i] as DriverUnit).AircraftDriveLicense) Console.Write(" #AIRCRAFT# ");                        
                     }
                     else if (RangeList[i] is BaggageUnit)
                     {
                         Console.Write("VOLUME:{0,7} ", (RangeList[i] as BaggageUnit).Volume);
                         Console.Write("WEIGHT:{0,7} ", (RangeList[i] as BaggageUnit).Weight);
-
                     }
+
                     Console.WriteLine();
                 }
             Console.WriteLine();

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CheckPoint01
 {
-    class CarUnit : TransportUnit , IisTransport , IisBaggage, IisMaterialValue
+    class CarUnit : TransportUnit, IisTransport, IisMaterialValue, IhasPassenger
     {
+        List<BaggageUnit> Baggage = new List<BaggageUnit>();
+        List<PassengerUnit> Passengers = new List<PassengerUnit>();
         public double WeightCapacity { get; set; }
         public double VolumeCapacity { get; set; }
         public double Weight { get; set; }
@@ -16,53 +18,31 @@ namespace CheckPoint01
         public double FuelCons { get; set; }
         public int CostValue { get; set; }
         public double FuelValue { get; set; }
-        //public int 
-        
-
         public DriverUnit CarDriver;
-        List<BaggageUnit> Baggage = new List<BaggageUnit>();
-        List<PassengerUnit> Passengers = new List<PassengerUnit>();
-
-
-
-
         public int PassengerCapacity { get; set; }
-
-
         public double CurrentWeightValue { get; set; }
-
         public double CurrentVolumeValue { get; set; }
+        public double WayRange { get; set; }
+
+        public CarUnit()
+        {
+            kindofunit = KindOfUnit.Car;
+        }
 
         public bool LoadBaggage(BaggageUnit item)
         {
             return true;
         }
 
-
-
-
-
-
-
-
-        public double WayRange
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-
         public bool LoadDriver(DriverUnit item)
         {
-            throw new NotImplementedException();
+            if (item != null)
+            {
+                CarDriver = item;
+                return true;
+            }
+            else return false;
         }
-
 
         public bool LoadPassenger(PassengerUnit item)
         {

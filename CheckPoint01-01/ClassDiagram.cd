@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CheckPoint01.TransportUnit" BaseTypeListCollapsed="true">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -30,7 +30,7 @@
     <Position X="0.5" Y="0.5" Width="1.5" />
     <InheritanceLine Type="CheckPoint01.TransportUnit" FixedToPoint="true">
       <Path>
-        <Point X="4.25" Y="0.688" />
+        <Point X="4.5" Y="0.688" />
         <Point X="2" Y="0.688" />
       </Path>
     </InheritanceLine>
@@ -61,7 +61,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint01.CarUnit">
-    <Position X="2.5" Y="3.25" Width="1.5" />
+    <Position X="2.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEEAQAAAQAQAhAAgAEQQAAACAAgAAAAAIgAgIABAA=</HashCode>
       <FileName>Units\CarUnit.cs</FileName>
@@ -69,23 +69,23 @@
     <Lollipop Position="0.1" />
   </Class>
   <Class Name="CheckPoint01.AircraftUnit">
-    <Position X="4.25" Y="4.25" Width="1.5" />
+    <Position X="4.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEEAQAAAQAQADAAgAEQQAAAAAAgAAABAAAAgIABAA=</HashCode>
+      <HashCode>AAgEEAQAAAQAQABAAgAEQQAAAAAAgAAAAAAAAgIEBAA=</HashCode>
       <FileName>Units\AircraftUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CheckPoint01.BaggageWagonUnit">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAQAAAAAQAAAAgAAAAAAACAAgAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAQAAAAAQAAAAgAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\BaggageWagonUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CheckPoint01.PassengerWagonUnit">
-    <Position X="6.25" Y="3.5" Width="1.5" />
+    <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Units\PassengerWagonUnit.cs</FileName>
@@ -93,7 +93,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CheckPoint01.LocomotiveUnit">
-    <Position X="6.25" Y="5.75" Width="1.5" />
+    <Position X="8.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAgIAAAA=</HashCode>
       <FileName>Units\LocomotiveUnit.cs</FileName>
@@ -101,14 +101,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CheckPoint01.TrainUnit">
-    <Position X="6.25" Y="8.25" Width="1.5" />
+    <Position X="6.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Units\TrainUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint01.TransportCompany">
-    <Position X="8.25" Y="0.5" Width="2.25" />
+    <Position X="6.5" Y="6.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AGIAUEQFAAECABAQCCAQBgQQAAAABAAACAAgAABQIAI=</HashCode>
       <FileName>TransportCompany.cs</FileName>
@@ -116,7 +116,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CheckPoint01.TransportUnitComparerByID" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.25" Y="9.5" Width="2.5" />
+    <Position X="9.25" Y="10" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Comparers\TransportUnitComparerByID.cs</FileName>
@@ -124,7 +124,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="CheckPoint01.TransportUnitComparerByName" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.25" Y="8.75" Width="2.5" />
+    <Position X="9.25" Y="9.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Comparers\TransportUnitComparerByName.cs</FileName>
@@ -132,7 +132,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="CheckPoint01.TransportUnitComparerByType" Collapsed="true">
-    <Position X="8.25" Y="8" Width="2.5" />
+    <Position X="9.25" Y="8.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Comparers\TransportUnitComparerByType.cs</FileName>
@@ -161,7 +161,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IisTransport">
-    <Position X="11" Y="6.75" Width="1.5" />
+    <Position X="9.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAgIAAAA=</HashCode>
       <FileName>Interfaces\IisTransport.cs</FileName>
@@ -181,7 +181,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="CheckPoint01.IisMaterialValue">
-    <Position X="13" Y="4.5" Width="1.5" />
+    <Position X="12.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Interfaces\IisMaterialValue.cs</FileName>

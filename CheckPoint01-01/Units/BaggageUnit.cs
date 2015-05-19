@@ -10,7 +10,10 @@ namespace CheckPoint01
     {
         public double Weight { get; set; }
         public double Volume { get; set; }
-        
-        
+
+        public BaggageUnit()
+        {
+            kindofunit = KindOfUnit.Baggage;
+        }
     }
 }
