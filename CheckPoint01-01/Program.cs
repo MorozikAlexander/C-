@@ -21,10 +21,8 @@ namespace CheckPoint01
              * 10000 ..      : Baggages
              * 
              * 
-             */
-            Console.WriteLine(Console.ForegroundColor);            
+             */            
             TransportCompany BelAvia = new TransportCompany("BelaAvia");
-
             BelAvia.Add(new BaggageUnit() { ID = 10000, Name = "Baggage", Volume = 0.025, Weight = 15 });
             BelAvia.Add(new BaggageUnit() { ID = 10001, Name = "HandBaggage", Volume = 0.05, Weight = 25 });
             BelAvia.Add(new BaggageUnit() { ID = 10002, Name = "RedBox", Volume = 0.1, Weight = 35 });
@@ -58,7 +56,7 @@ namespace CheckPoint01
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Транспортная <{0}> компания, стоимость машин автопарка:", BelAvia.CompanyName, BelAvia.Count);
-            BelAvia.SortByCostValue<CarUnit>();
+            BelAvia.PrintUnitsSortedByCostValue<CarUnit>();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Транспортная <{0}> компания, стоимость автопарка: {1}", BelAvia.CompanyName, BelAvia.CostValue<CarUnit>());
@@ -66,19 +64,19 @@ namespace CheckPoint01
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Сортировка автомобилей по расходу топлива:");
-            BelAvia.SortByFuelCons<CarUnit>();
+            BelAvia.PrintUnitsSortedByFuelCons<CarUnit>();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Сортировка автомобилей по максимальной скорости:");            
-            BelAvia.SortByMaxSpeed<CarUnit>();
+            BelAvia.PrintUnitsSortedByMaxSpeed<CarUnit>();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Сортировка автомобилей по максимальной скорости в диапозонах 150-300:");            
-            BelAvia.SortByMaxSpeed<CarUnit>(150, 300);
+            BelAvia.PrintUnitsSortedByMaxSpeedInRange<CarUnit>(150, 300);
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Сортировка самолетов по расходу топлива:");
-            BelAvia.SortByFuelCons<AircraftUnit>();
+            BelAvia.PrintUnitsSortedByFuelCons<AircraftUnit>();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Общие вместимость:{1} и грузоподемность:{0} самолетов.", BelAvia.WeightCapacity<AircraftUnit>(), BelAvia.VolumeCapacity<AircraftUnit>());
@@ -86,11 +84,11 @@ namespace CheckPoint01
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Cамолетов c расходом топлива 80-120 :");
-            BelAvia.SortByFuelCons<AircraftUnit>(80, 120);
+            BelAvia.PrintUnitsSortedByFuelConsInRange<AircraftUnit>(80, 120);
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Сортировка самолетов по дальности полета:");
-            BelAvia.SortByWayRange<AircraftUnit>();            
+            BelAvia.PrintUnitsSortedByWayRange<AircraftUnit>();
 
             Console.ReadKey();
         }

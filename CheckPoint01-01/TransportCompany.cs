@@ -69,14 +69,14 @@ namespace CheckPoint01
         public void SortByName()
         {
             this.Sort(new TransportUnitComparerByName());
-        }
+        }          
 
-        public void SortByFuelCons<T>()
+        public void PrintUnitsSortedByFuelCons<T>()
         {
-            SortByFuelCons<T>(0, 0);
+            PrintUnitsSortedByFuelConsInRange<T>(0, 0);
         }
 
-        public void SortByFuelCons<T>(double min, double max)
+        public void PrintUnitsSortedByFuelConsInRange<T>(double min, double max)
         {
             IEnumerable<T> newList = new List<T>();
             newList = TUnits.OfType<T>();            
@@ -85,16 +85,16 @@ namespace CheckPoint01
                 newList = from c in newList where (c is IisTransport) orderby ((c as IisTransport).FuelCons) select c;
                 if ((max > 0) && (max > min))
                     newList = from c in newList where (((c as IisTransport).FuelCons >= min) && ((c as IisTransport).FuelCons <= max)) select c;
-                PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
+                PrintCurrentUnits<T>(newList.ToList<T>(), ConsoleColor.Cyan);
             }            
         }
 
-        public void SortByMaxSpeed<T>()
+        public void PrintUnitsSortedByMaxSpeed<T>()
         {
-            SortByMaxSpeed<T>(0, 0);
+            PrintUnitsSortedByMaxSpeedInRange<T>(0, 0);
         }
 
-        public void SortByMaxSpeed<T>(double min, double max)
+        public void PrintUnitsSortedByMaxSpeedInRange<T>(double min, double max)
         {
             IEnumerable<T> newList = new List<T>();
             newList = TUnits.OfType<T>();
@@ -103,16 +103,16 @@ namespace CheckPoint01
                 newList = from c in newList where (c is IisTransport) orderby ((c as IisTransport).MaxSpeed) select c;
                 if ((max > 0) && (max > min))
                     newList = from c in newList where (((c as IisTransport).MaxSpeed >= min) && ((c as IisTransport).MaxSpeed <= max)) select c;
-                PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
+                PrintCurrentUnits<T>(newList.ToList<T>(), ConsoleColor.Cyan);
             }
         }
 
-        public void SortByCostValue<T>()
+        public void PrintUnitsSortedByCostValue<T>()
         {
-            SortByCostValue<T>(0, 0);
+            PrintUnitsSortedByCostValueInRange<T>(0, 0);
         }
 
-        public void SortByCostValue<T>(double min, double max)
+        public void PrintUnitsSortedByCostValueInRange<T>(double min, double max)
         {
             IEnumerable<T> newList = new List<T>();
             newList = TUnits.OfType<T>();
@@ -121,16 +121,16 @@ namespace CheckPoint01
                 newList = from c in newList where (c is IisMaterialValue) orderby ((c as IisMaterialValue).CostValue) select c;
                 if ((max > 0) && (max > min))
                     newList = from c in newList where (((c as IisMaterialValue).CostValue >= min) && ((c as IisMaterialValue).CostValue <= max)) select c;
-                PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
+                PrintCurrentUnits<T>(newList.ToList<T>(), ConsoleColor.Cyan);
             }
         }
 
-        public void SortByWayRange<T>()
+        public void PrintUnitsSortedByWayRange<T>()
         {
-            SortByWayRange<T>(0, 0);
+            PrintUnitsSortedByWayRangeInRange<T>(0, 0);
         }
 
-        public void SortByWayRange<T>(double min, double max)
+        public void PrintUnitsSortedByWayRangeInRange<T>(double min, double max)
         {
             IEnumerable<T> newList = new List<T>();
             newList = TUnits.OfType<T>();
@@ -139,7 +139,7 @@ namespace CheckPoint01
                 newList = from c in newList where (c is IisTransport) orderby ((c as IisTransport).WayRange) select c;
                 if ((max > 0) && (max > min))
                     newList = from c in newList where (((c as IisTransport).WayRange >= min) && ((c as IisTransport).WayRange <= max)) select c;
-                PrintUnitsRange<T>(newList.ToList<T>(), ConsoleColor.Cyan);
+                PrintCurrentUnits<T>(newList.ToList<T>(), ConsoleColor.Cyan);
             }
         }
         #endregion
@@ -147,10 +147,14 @@ namespace CheckPoint01
         #region Prints
         public void PrintUnits()
         {
-            PrintUnitsRange<TransportUnit>(TUnits.ToList<TransportUnit>(), ConsoleColor.Green);
+            //PrintCurrentUnits<TransportUnit>(TUnits.ToList<TransportUnit>(), ConsoleColor.Green);
+            //MyExtensions.ExtUnitsPrint(TUnits, ConsoleColor.Green);
+            //TUnits.ExtUnitsSelectByType<TransportUnit>().ExtUnitsPrint(ConsoleColor.Green);
+            //TUnits.FindAll(x => x is CarUnit).ExtUnitsPrint(ConsoleColor.Green);
+            TUnits.ExtUnitsPrint(ConsoleColor.Green);            
         }
 
-        public void PrintUnitsRange<T>(List<T> RangeList, ConsoleColor color)
+        public void PrintCurrentUnits<T>(List<T> RangeList, ConsoleColor color)
         {            
             if (RangeList != null)
                 for (int i = 0; i < RangeList.Count; i++)
@@ -191,7 +195,6 @@ namespace CheckPoint01
                         Console.Write("VOLUME:{0,7} ", (RangeList[i] as BaggageUnit).Volume);
                         Console.Write("WEIGHT:{0,7} ", (RangeList[i] as BaggageUnit).Weight);
                     }
-
                     Console.WriteLine();
                 }
             Console.WriteLine();
