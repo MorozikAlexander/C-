@@ -24,8 +24,7 @@ namespace CheckPoint01
              * 100   ..  999 : Cars
              * 1000  .. 9999 : Mans - Drivers & Passengers
              * 10000 ..      : Baggages
-             */
-            Console.WriteLine(item.GetType());
+             */            
             int StartID = 0;
             if (item is AircraftUnit)
                 StartID = 1;
