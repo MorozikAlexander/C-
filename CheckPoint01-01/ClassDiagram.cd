@@ -110,7 +110,7 @@
   <Class Name="CheckPoint01.TransportCompany">
     <Position X="6.5" Y="6.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAIIUAQFAAEAAAAASAQYAAQQAAAAAAAAQAAgAADQABI=</HashCode>
+      <HashCode>AAIIUAQFAAEAAAAASAQYgAQQAAAAAAAAQAAgAADQABI=</HashCode>
       <FileName>TransportCompany.cs</FileName>
     </TypeIdentifier>
   </Class>

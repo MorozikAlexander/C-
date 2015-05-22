@@ -24,7 +24,7 @@ namespace CheckPoint01
 
         public AircraftUnit()
         {
-            UnitKind = KindOfUnit.Aircraft;
+            UnitKind = KindOfUnit.Aircraft;            
         }
 
         public double FuelValue

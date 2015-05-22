@@ -8,12 +8,41 @@ namespace CheckPoint01
 {
     public class TransportCompany
     {
-        private List<TransportUnit> TUnits = new List<TransportUnit>();        
+        protected List<TransportUnit> TUnits = new List<TransportUnit>();        
         public string CompanyName { get; set; }
 
         public TransportCompany(string companyname)
         {
             CompanyName = companyname;
+        }
+
+        public int GetID(TransportUnit item)
+        {
+            /* Recommended ID's ranges:
+             * 1     ..    9 : Aircrafts
+             * 10    ..   99 : Trains, Locomotives, Passenger & Baggage Wagons
+             * 100   ..  999 : Cars
+             * 1000  .. 9999 : Mans - Drivers & Passengers
+             * 10000 ..      : Baggages
+             */
+            Console.WriteLine(item.GetType());
+            int StartID = 0;
+            if (item is AircraftUnit)
+                StartID = 1;
+            else if ((item is TrainUnit) || (item is LocomotiveUnit) || (item is PassengerWagonUnit) || (item is BaggageWagonUnit))
+                StartID = 10;
+            else if (item is CarUnit)
+                StartID = 100;
+            else if (item is ManUnit)
+                StartID = 1000;
+            else if (item is BaggageUnit)
+                StartID = 10000;
+            if (TUnits.Count > 0)
+                while (TUnits.Find(x => x.ID == StartID) != null)
+                {
+                    StartID++;
+                }
+            return StartID;
         }
 
         #region TUnits methods
@@ -31,6 +60,7 @@ namespace CheckPoint01
 
         public void Add(TransportUnit item)
         {
+            item.ID = GetID(item);
             TUnits.Add(item);
         }
 

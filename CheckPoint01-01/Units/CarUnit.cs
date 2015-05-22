@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckPoint01
 {
-    class CarUnit : TransportUnit, IisTransport, IisMaterialValue, IhasPassenger
+    public class CarUnit : TransportUnit, IisTransport, IisMaterialValue, IhasPassenger
     {
         List<BaggageUnit> Baggage = new List<BaggageUnit>();
         List<PassengerUnit> Passengers = new List<PassengerUnit>();
