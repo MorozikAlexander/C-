@@ -8,11 +8,57 @@ namespace CheckPoint01
 {
     static class MyExtensions
     {
-        /*public static List<TransportUnit> ExtUnitsSortRange(this List<TransportUnit> RangeList)
+        public static List<TransportUnit> ExtSelectSortByFuelCons(this List<TransportUnit> RangeList, double min, double max)
         {
-            RangeList.OrderBy<TransportUnit>(x => (x as T).)
+            if (RangeList != null)
+            {
+                IEnumerable<TransportUnit> newList = new List<TransportUnit>();
+                newList = from c in RangeList where (c is IisTransport) orderby ((c as IisTransport).FuelCons) select c;
+                if ((max > 0) && (max > min))
+                    newList = from c in newList where (((c as IisTransport).FuelCons >= min) && ((c as IisTransport).FuelCons <= max)) select c;
+                return newList.ToList<TransportUnit>();
+            }
+            else return null;
+        }
 
-        }*/
+        public static List<TransportUnit> ExtSelectSortByMaxSpeed(this List<TransportUnit> RangeList, double min, double max)
+        {
+            if (RangeList != null)
+            {
+                IEnumerable<TransportUnit> newList = new List<TransportUnit>();
+                newList = from c in RangeList where (c is IisTransport) orderby ((c as IisTransport).MaxSpeed) select c;
+                if ((max > 0) && (max > min))
+                    newList = from c in newList where (((c as IisTransport).MaxSpeed >= min) && ((c as IisTransport).MaxSpeed <= max)) select c;
+                return newList.ToList<TransportUnit>();
+            }
+            else return null;
+        }
+
+        public static List<TransportUnit> ExtSelectSortByWayRange(this List<TransportUnit> RangeList, double min, double max)
+        {           
+            if (RangeList != null)
+            {
+                IEnumerable<TransportUnit> newList = new List<TransportUnit>();
+                newList = from c in RangeList where (c is IisTransport) orderby ((c as IisTransport).WayRange) select c;
+                if ((max > 0) && (max > min))
+                    newList = from c in newList where (((c as IisTransport).WayRange >= min) && ((c as IisTransport).WayRange <= max)) select c;
+                return newList.ToList<TransportUnit>();
+            }
+            else return null;
+        }
+
+        public static List<TransportUnit> ExtSelectSortByCostValue(this List<TransportUnit> RangeList, double min, double max)
+        {
+            if (RangeList != null)
+            {
+                IEnumerable<TransportUnit> newList = new List<TransportUnit>();
+                newList = from c in RangeList where (c is IisMaterialValue) orderby ((c as IisMaterialValue).CostValue) select c;
+                if ((max > 0) && (max > min))
+                    newList = from c in newList where (((c as IisMaterialValue).CostValue >= min) && ((c as IisMaterialValue).CostValue <= max)) select c;
+                return newList.ToList<TransportUnit>();
+            }
+            else return null;
+        }
 
         public static List<TransportUnit> ExtUnitsSelectByType<T>(this List<TransportUnit> RangeList)
         {

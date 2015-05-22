@@ -38,7 +38,7 @@ namespace CheckPoint01
             BelAvia.Add(new CarUnit() { ID = 104, Name = "BMW 530", CostValue = 45000, FuelCons = 10.9, MaxSpeed = 250 });
             BelAvia.Add(new CarUnit() { ID = 102, Name = "BMW M1", CostValue = 45900, FuelCons = 10.5, MaxSpeed = 270 });
             BelAvia.Add(new CarUnit() { ID = 103, Name = "LADA Kalina", CostValue = 11000, FuelCons = 8.8, MaxSpeed = 99, PassengerCapacity = 4, VolumeCapacity = 0.8, WeightCapacity = 100 });
-                        
+            
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Транспортная <{0}> компания, {1}  элементов по ID:", BelAvia.CompanyName, BelAvia.Count);
             BelAvia.SortByID();
@@ -80,15 +80,15 @@ namespace CheckPoint01
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Общие вместимость:{1} и грузоподемность:{0} самолетов.", BelAvia.WeightCapacity<AircraftUnit>(), BelAvia.VolumeCapacity<AircraftUnit>());
-            Console.WriteLine();
+            Console.WriteLine();            
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Cамолетов c расходом топлива 80-120 :");
-            BelAvia.PrintUnitsSortedByFuelConsInRange<AircraftUnit>(80, 120);
+            BelAvia.PrintUnitsSortedByFuelConsInRange<AircraftUnit>(80, 120);            
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Сортировка самолетов по дальности полета:");
-            BelAvia.PrintUnitsSortedByWayRange<AircraftUnit>();
+            BelAvia.PrintUnitsSortedByWayRange<AircraftUnit>();            
 
             Console.ReadKey();
         }
