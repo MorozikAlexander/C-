@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test00-04-Logistic", "Test0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPoint01", "CheckPoint01-01\CheckPoint01.csproj", "{6610B568-7D42-43C0-A028-913234631A94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPoint02", "CheckPoint02\CheckPoint02.csproj", "{186D5361-385C-41D2-9D46-2BBFB05F6E68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6610B568-7D42-43C0-A028-913234631A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6610B568-7D42-43C0-A028-913234631A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6610B568-7D42-43C0-A028-913234631A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186D5361-385C-41D2-9D46-2BBFB05F6E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186D5361-385C-41D2-9D46-2BBFB05F6E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186D5361-385C-41D2-9D46-2BBFB05F6E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186D5361-385C-41D2-9D46-2BBFB05F6E68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

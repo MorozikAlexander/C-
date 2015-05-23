@@ -22,7 +22,7 @@ namespace CheckPoint01
         public int ID
         {
             get { return _id;  }
-            set { _id = value; }
+                                      set { _id = value; }
         }
     }
 }

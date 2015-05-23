@@ -59,7 +59,7 @@ namespace CheckPoint01
 
         public void Add(TransportUnit item)
         {
-            item.ID = GetID(item);
+            item.ID = GetID(item);            
             TUnits.Add(item);
         }
 
