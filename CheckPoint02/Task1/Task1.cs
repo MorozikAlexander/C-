@@ -11,8 +11,9 @@ namespace CheckPoint02
     public class Task1
     {
         public string text;
-        string[] sentence_separators = { "(. )", "(! )", "(? )" };
-        string[] sentences;
+        //string sentence_separators = "([.] .)|([!] .)|([?] .)";
+        string sentence_separators = "([.!?]) ";
+        //string[] sentences;
 
         public Task1(string input_text)
         {
@@ -26,12 +27,14 @@ namespace CheckPoint02
 
         public void Extract_Sentences()
         {
-            sentences = text.Split(sentence_separators, StringSplitOptions.RemoveEmptyEntries);
+            string[] sentences = Regex.Split(text, sentence_separators);
             if (sentences.Length > 0)
                 for (int i = 0; i < sentences.Length; i++)
                 {                    
-                    Console.WriteLine(sentences[i]);                    
+                    Console.WriteLine("[{0}]:{1}", sentences[i].Length, sentences[i]);
                 }
+
+            Console.WriteLine(sentences.Length);                    
         }
 
         public void PrepareText()
