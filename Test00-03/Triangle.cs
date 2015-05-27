@@ -39,7 +39,7 @@ namespace Test00_03
                 sides[0] = x;
                 sides[1] = y;
                 sides[2] = z;
-                int m = 0;
+                int m = 0;                
                 for (int i = 2; i > 0; i--)
                 {
                     if (sides[i] > sides[i - 1])

@@ -18,22 +18,29 @@ namespace Test00_01
                 Console.WriteLine("ESC - выход; A, B - изменение параметров; X - возврат значения функции ");
                 Console.WriteLine("A = {0}; B= {1}", myfunction.ValueA, myfunction.ValueB);
                 cki = Console.ReadKey();
-                switch (cki.Key)
+                try
                 {
-                    case ConsoleKey.A:
-                        Console.Write("Введите значение А:");
-                        myfunction.ValueA = Convert.ToDouble(Console.ReadLine());
-                        break;
-                    case ConsoleKey.B:
-                        Console.Write("Введите значение B:");
-                        myfunction.ValueB = Convert.ToDouble(Console.ReadLine());
-                        break;
-                    case ConsoleKey.X:
-                        Console.Write("Введите значение X:");
-                        Console.WriteLine("Получено значение Y:" + myfunction.y(Convert.ToDouble(Console.ReadLine())));
-                        break;
-                    default:
-                        break;
+                    switch (cki.Key)
+                    {
+                        case ConsoleKey.A:
+                            Console.Write("Введите значение А:");
+                            myfunction.ValueA = Convert.ToDouble(Console.ReadLine());
+                            break;
+                        case ConsoleKey.B:
+                            Console.Write("Введите значение B:");
+                            myfunction.ValueB = Convert.ToDouble(Console.ReadLine());
+                            break;
+                        case ConsoleKey.X:
+                            Console.Write("Введите значение X:");
+                            Console.WriteLine("Получено значение Y:" + myfunction.y(Convert.ToDouble(Console.ReadLine())));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("!Ошибка:{0}:введите тип double: 0,0", e.Message);
                 }
             } while (cki.Key != ConsoleKey.Escape);
         }

@@ -22,15 +22,23 @@ namespace Test00_02
     {
         static void Main(string[] args)
         {
-            int jj = 0;
+            int jj = 10;
             int kk = 100000;
             long gtime;
             int i, j;
 
-            Console.Write(" Введите количество элементов(по умолчанию 100.000):");
-            kk = Convert.ToInt32(Console.ReadLine());
-            Console.Write(" Введите количество итераций(оптимально 10 итераций при 100.000 элементов):");
-            jj = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.Write(" Введите количество элементов(по умолчанию 100.000):");
+                kk = Convert.ToInt32(Console.ReadLine());
+                Console.Write(" Введите количество итераций(оптимально и по умолчанию 10 итераций при 100.000 элементов):");
+                jj = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("!Ошибка:" + e.Message);
+                Console.WriteLine("Ошибочно введенное значение взято по умолчанию!" );                
+            }
 
             Random rnd = new Random();
             List<Item> ArrayList = new List<Item>();
@@ -85,14 +93,12 @@ namespace Test00_02
             gtime /= jj;
             Console.WriteLine("Время:" + gtime);
 
-            int summ = 0;
-                        
+            int summ = 0;                        
             for (i = 1; i <= kk; i++)
             {
                 summ += ArrayList[i - 1].CostValue;
             }
-            Console.WriteLine("Сумма стоимостей в объектах:" + summ);
-            
+            Console.WriteLine("Сумма стоимостей в объектах:" + summ);            
 
             summ = 0;
             for (i = 1; i <= kk; i++)
