@@ -31,7 +31,7 @@ namespace CheckPoint02
             if (sentences.Length > 0)
                 for (int i = 0; i < sentences.Length; i++)
                 {                    
-                    Console.WriteLine("[{0}]:{1}", sentences[i].Length, sentences[i]);
+                    Console.WriteLine("[{2}:{0}]:{1}", sentences[i].Length, sentences[i],i);
                 }
 
             Console.WriteLine(sentences.Length);                    

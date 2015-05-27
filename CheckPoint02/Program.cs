@@ -15,14 +15,15 @@ namespace CheckPoint02
 
             try
             {
-                text = System.IO.File.ReadAllText("../../Text1.txt");                
+                text = System.IO.File.ReadAllText("../../Text.txt");
+                Task1 T1 = new Task1(text);
             }
             catch (Exception e)
             {
-                Console.WriteLine("Ошибка открытия файла:" + e.Message);
+                Console.WriteLine("Ошибки:" + e.Message);
             }
             
-            Task1 T1 = new Task1(text);            
+            //Task1 T1 = new Task1(text);
             
             Console.ReadKey();
         }
