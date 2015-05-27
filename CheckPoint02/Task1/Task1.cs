@@ -8,8 +8,11 @@ using System.Text.RegularExpressions;
 
 namespace CheckPoint02
 {
+    public enum SentenceKind { declarative, question, exclamatory, unknown };// . ? !
+
     public class Task1
     {
+        List<SentenceUnit> MySentences = new List<SentenceUnit>();
         public string text;
         //string sentence_separators = "([.] .)|([!] .)|([?] .)";
         string sentence_separators = "([.!?]) ";
@@ -48,6 +51,7 @@ namespace CheckPoint02
 
                 text = text.Replace("\r\n", " ");
                 text = text.Replace('\t', ' ');
+                //text = string.Concat(text, ' ');
 
                 while ((text.Contains("  ")) && (text.Length > 0))
                 {
@@ -55,8 +59,35 @@ namespace CheckPoint02
                     
                 }
 
-                if (text[0] == ' ')
+                while ((text.Contains("..")) && (text.Length > 0))
+                {
+                    text = text.Replace("..", ".");
+
+                }
+
+                while ((text.Contains("!!")) && (text.Length > 0))
+                {
+                    text = text.Replace("!!", "!");
+
+                }
+
+                while ((text.Contains("??")) && (text.Length > 0))
+                {
+                    text = text.Replace("??", "?");
+
+                }
+
+                while ((text[0] == ' ') || (text[0] == '!') || (text[0] == '.') || (text[0] == ',') || (text[0] == '?'))
                     text = text.Remove(0, 1);
+
+                while (text[text.Length - 1] == ' ')
+                    text = text.Remove(text.Length - 1, 1);
+
+                if ((text[text.Length - 1] == '.') || (text[text.Length - 1] == '!') || (text[text.Length - 1] == '?'))
+                    text = string.Concat(text, ' ');
+                else
+                    text = string.Concat(text, ". ");
+
 
 
 
