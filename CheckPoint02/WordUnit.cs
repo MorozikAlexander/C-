@@ -7,5 +7,14 @@ namespace CheckPoint02
 {
     public class WordUnit : Unit
     {
+        public WordUnit(string word)
+        {
+            text = word;
+        }
+
+        public int Length
+        {
+            get  { return text.Length; }
+        }
     }
 }

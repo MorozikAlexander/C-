@@ -7,7 +7,7 @@ namespace CheckPoint02
 {
     public class Unit
     {
-        string text { get; set; }
+        protected string text { get; set; }
 
     }
 }

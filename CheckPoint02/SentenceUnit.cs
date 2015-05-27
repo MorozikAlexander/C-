@@ -10,15 +10,18 @@ namespace CheckPoint02
     {
         public SentenceKind sentenseKind;
         public string text;
-        public List<SentenceUnit> MyWords = new List<SentenceUnit>();
+        public List<WordUnit> MyWords = new List<WordUnit>();
+
+        public int Length
+        {
+            get { return text.Length; }
+        }
 
 
         public SentenceUnit(string text1, SentenceKind kind)
         {
             text = text1;
             sentenseKind = kind;
-            MyWords = null;
-
         }
 
         public void Extract_Words()

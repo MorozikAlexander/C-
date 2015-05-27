@@ -18,11 +18,35 @@ namespace CheckPoint02
         public string text;
         //string sentence_separators = "([.] .)|([!] .)|([?] .)";
         public string sentence_separators = "([.!?]) ";
-        public string word_separators = "[-,] [-,] | [-,] |[-,] |[,] |[,]| ";
+        public string word_separators = " [-,:;] [-,:;] |[-,:;] [-,:;] | [-,:;] |[-,:;] |[-,:;] |[-,:;]| ";
 
 
 
         //string[] sentences;
+        public void SortSentencesByWordsLength()
+        {
+
+
+            if (MySentences.Count > 0)
+            {
+                IEnumerable<SentenceUnit> Result = from c in MySentences orderby c.MyWords.Count select c;
+
+                //Result = (List<SentenceUnit>)Result;
+
+                //Result = Result.ToList<SentenceUnit>();
+
+                foreach (SentenceUnit item in Result)
+                {
+                    Console.WriteLine("[{0}]:{1}", item.MyWords.Count, item.text);
+
+                    
+                }
+
+
+            }
+
+            
+        }
 
         public Task1(string input_text)
         {
@@ -32,21 +56,28 @@ namespace CheckPoint02
                 PrepareText();
                 Extract_Sentences();
                 Extract_Words();
+                SortSentencesByWordsLength();
             }
         }
 
         public void Extract_Words()
         {
             if (MySentences.Count > 0)
+
                 foreach (SentenceUnit item in MySentences)
                 {
                     string[] words = Regex.Split(item.text, word_separators);
                     if (words.Length > 0)
                         for (int i = 0; i < words.Length; i++)
-                            Console.WriteLine("W[{0}:{1}]:{2}", i + 1, words[i].Length, words[i]);
-                    
+                        {
+                            
+                            //Console.WriteLine("W[{0}:{1}]:{2}", i + 1, words[i].Length, words[i]);
+                            item.MyWords.Add(new WordUnit(words[i]));
+                        }
+
                 }
-            
+
+
                 
 
             
@@ -138,8 +169,8 @@ namespace CheckPoint02
                 Console.WriteLine("PREPARE*TEXT**********************TEXT*BEFORE:");
                 Console.WriteLine("{0}:{1}", text, text.Length);
                 Console.WriteLine("************************************");
-                
 
+                text = text.Replace("-\r\n", "");
                 text = text.Replace("\r\n", " ");
                 text = text.Replace('\t', ' ');                
 
