@@ -8,6 +8,11 @@ namespace CheckPoint01
 {
     static class MyExtensions
     {
+        public static List<TransportUnit> ExtUnitsSelectByType<T>(this List<TransportUnit> RangeList)
+        {
+            return RangeList.FindAll(x => x is T);
+        }
+
         public static List<TransportUnit> ExtSelectSortByFuelCons(this List<TransportUnit> RangeList, double min, double max)
         {
             if (RangeList != null)
@@ -58,11 +63,6 @@ namespace CheckPoint01
                 return newList.ToList<TransportUnit>();
             }
             else return null;
-        }
-
-        public static List<TransportUnit> ExtUnitsSelectByType<T>(this List<TransportUnit> RangeList)
-        {
-            return RangeList.FindAll(x => x is T);
         }
         
         public static void ExtUnitsPrint(this List<TransportUnit> RangeList, ConsoleColor color)

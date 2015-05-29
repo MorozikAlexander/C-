@@ -20,7 +20,7 @@ namespace CheckPoint02
             }
             catch (Exception e)
             {
-                Console.WriteLine("Ошибки:" + e.Message);
+                Console.WriteLine("Ошибка:" + e.Message);
             }
             
             //Task1 T1 = new Task1(text);
