@@ -69,6 +69,7 @@ namespace CheckPoint02
         public SentenceUnit(string text1, SentenceKind kind)
         {
             text = text1;
+
             sentenseKind = kind;
         }
     }
