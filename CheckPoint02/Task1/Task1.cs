@@ -15,15 +15,14 @@ namespace CheckPoint02
     public class Task1
     {
         List<SentenceUnit> MySentences = new List<SentenceUnit>();
-        public string text;
-        //string sentence_separators = "([.] .)|([!] .)|([?] .)";
+        public string text;        
         public string sentence_separators = "([.!?]) ";
         public string word_separators = " [-,:;] [-,:;] |[-,:;] [-,:;] | [-,:;] |[-,:;] |[-,:;] |[-,:;]| ";
 
 
 
         //string[] sentences;
-        public void SortSentencesByWordsLength()
+        public void SortSentencesByWordsCount()
         {
 
 
@@ -37,7 +36,7 @@ namespace CheckPoint02
 
                 foreach (SentenceUnit item in Result)
                 {
-                    Console.WriteLine("[{0}]:{1}", item.MyWords.Count, item.text);
+                    Console.WriteLine("[{0}]:{1}", item.MyWords.Count, item.Sentence);
 
                     
                 }
@@ -56,7 +55,7 @@ namespace CheckPoint02
                 PrepareText();
                 Extract_Sentences();
                 Extract_Words();
-                SortSentencesByWordsLength();
+                SortSentencesByWordsCount();
             }
         }
 

@@ -17,6 +17,31 @@ namespace CheckPoint02
             get { return text.Length; }
         }
 
+        public string Sentence
+        {
+            get
+            {
+                switch (sentenseKind)
+                {
+                    case SentenceKind.declarative:
+                        return text + '.';
+                        break;
+                    case SentenceKind.question:
+                        return text + '?';
+                        break;
+                    case SentenceKind.exclamatory:
+                        return text + '!';
+                        break;
+                    case SentenceKind.unknown:
+                        return text + '.';
+                        break;
+                    default:
+                        return text + '.';
+                        break;
+                }
+            }
+        }
+
 
         public SentenceUnit(string text1, SentenceKind kind)
         {
