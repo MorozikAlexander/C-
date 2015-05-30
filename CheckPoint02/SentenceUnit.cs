@@ -9,12 +9,36 @@ namespace CheckPoint02
     public class SentenceUnit
     {
         public SentenceKind sentenseKind;
-        public string text;
+        private string _text;
         public List<WordUnit> MyWords = new List<WordUnit>();
+        public static string word_separators = " [-,:;] [-,:;] |[-,:;] [-,:;] | [-,:;] |[-,:;] |[-,:;] |[-,:;]| ";
+
+        public string text
+        {
+            get { return _text; }
+            set 
+            { 
+                _text = value;
+                Extract_Words();
+            }
+        }
+
+        public void Extract_Words()
+        {
+            MyWords.Clear();
+            if (_text.Length > 0)
+            {
+                string[] words = Regex.Split(_text, word_separators);
+                if (words.Length > 0)
+                    for (int i = 0; i < words.Length; i++)                        
+                        MyWords.Add(new WordUnit(words[i]));                    
+            }                
+        }
+
 
         public int Length
         {
-            get { return text.Length; }
+            get { return _text.Length; }
         }
 
         public string Sentence
@@ -24,35 +48,28 @@ namespace CheckPoint02
                 switch (sentenseKind)
                 {
                     case SentenceKind.declarative:
-                        return text + '.';
+                        return _text + '.';
                         break;
                     case SentenceKind.question:
-                        return text + '?';
+                        return _text + '?';
                         break;
                     case SentenceKind.exclamatory:
-                        return text + '!';
+                        return _text + '!';
                         break;
                     case SentenceKind.unknown:
-                        return text + '.';
+                        return _text + '.';
                         break;
                     default:
-                        return text + '.';
+                        return _text + '.';
                         break;
                 }
             }
         }
-
 
         public SentenceUnit(string text1, SentenceKind kind)
         {
             text = text1;
             sentenseKind = kind;
         }
-
-        public void Extract_Words()
-        {
-
-        }
-
     }
 }

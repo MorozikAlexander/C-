@@ -8,38 +8,24 @@ using System.Text.RegularExpressions;
 
 namespace CheckPoint02
 {
-    public enum SentenceKind { declarative, question, exclamatory, unknown };// . ? !
-
-
+    public enum SentenceKind { declarative, question, exclamatory, unknown };
 
     public class Task1
     {
         List<SentenceUnit> MySentences = new List<SentenceUnit>();
         public string text;        
         public string sentence_separators = "([.!?]) ";
-        public string word_separators = " [-,:;] [-,:;] |[-,:;] [-,:;] | [-,:;] |[-,:;] |[-,:;] |[-,:;]| ";
-
-
-
-        //string[] sentences;
+        
+        
         public void SortSentencesByWordsCount()
         {
-
-
             if (MySentences.Count > 0)
             {
                 IEnumerable<SentenceUnit> Result = from c in MySentences orderby c.MyWords.Count select c;
+                Result.PrintSentences(true);
 
-                //Result = (List<SentenceUnit>)Result;
 
-                //Result = Result.ToList<SentenceUnit>();
 
-                foreach (SentenceUnit item in Result)
-                {
-                    Console.WriteLine("[{0}]:{1}", item.MyWords.Count, item.Sentence);
-
-                    
-                }
 
 
             }
@@ -54,34 +40,11 @@ namespace CheckPoint02
                 text = input_text;
                 PrepareText();
                 Extract_Sentences();
-                Extract_Words();
+                //Extract_Words();
                 SortSentencesByWordsCount();
             }
         }
 
-        public void Extract_Words()
-        {
-            if (MySentences.Count > 0)
-
-                foreach (SentenceUnit item in MySentences)
-                {
-                    string[] words = Regex.Split(item.text, word_separators);
-                    if (words.Length > 0)
-                        for (int i = 0; i < words.Length; i++)
-                        {
-                            
-                            //Console.WriteLine("W[{0}:{1}]:{2}", i + 1, words[i].Length, words[i]);
-                            item.MyWords.Add(new WordUnit(words[i]));
-                        }
-
-                }
-
-
-                
-
-            
-            
-        }
 
         
         public void Extract_Sentences()
@@ -165,66 +128,21 @@ namespace CheckPoint02
         {
             if (text.Length > 0)
             {
-                Console.WriteLine("PREPARE*TEXT**********************TEXT*BEFORE:");
-                Console.WriteLine("{0}:{1}", text, text.Length);
-                Console.WriteLine("************************************");
-
                 text = text.Replace("-\r\n", "");
                 text = text.Replace("\r\n", " ");
-                text = text.Replace('\t', ' ');                
-
-                while ((text.Contains("  ")) && (text.Length > 0))
-                {
-                    text = text.Replace("  ", " ");
-                    
-                }
-
-                while ((text.Contains("..")) && (text.Length > 0))
-                {
-                    text = text.Replace("..", ".");
-
-                }
-
-                while ((text.Contains("!!")) && (text.Length > 0))
-                {
-                    text = text.Replace("!!", "!");
-
-                }
-
-                while ((text.Contains("??")) && (text.Length > 0))
-                {
-                    text = text.Replace("??", "?");
-
-                }
-
+                text = text.Replace('\t', ' ');
+                while (text.Contains("  ")) text = text.Replace("  ", " ");
+                while (text.Contains("..")) text = text.Replace("..", ".");
+                while (text.Contains("!!")) text = text.Replace("!!", "!");
+                while (text.Contains("??")) text = text.Replace("??", "?");
+                while (text[text.Length - 1] == ' ') text = text.Remove(text.Length - 1, 1);
                 while ((text[0] == ' ') || (text[0] == '!') || (text[0] == '.') || (text[0] == ',') || (text[0] == '?'))
                     text = text.Remove(0, 1);
-
-                while (text[text.Length - 1] == ' ')
-                    text = text.Remove(text.Length - 1, 1);
-
                 if ((text[text.Length - 1] == '.') || (text[text.Length - 1] == '!') || (text[text.Length - 1] == '?'))
                     text = string.Concat(text, ' ');
                 else
                     text = string.Concat(text, ". ");
-
-
-
-
-
-                Console.WriteLine("PREPARE*TEXT**********************TEXT*AFTER:");
-                Console.WriteLine("{0}:{1}", text, text.Length);
-                Console.WriteLine("************************************");
-
-
-
-
-                
             }
-
         }
-
-
-
     }
 }
