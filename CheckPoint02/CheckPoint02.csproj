@@ -43,18 +43,16 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="punctuationUnit.cs" />
     <Compile Include="SentenceUnit.cs" />
     <Compile Include="Task1\MyExtensions.cs" />
     <Compile Include="Task1\Task1.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="WordUnit.cs" />
+    <Compile Include="WordUnitComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Text.txt" />

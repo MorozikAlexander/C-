@@ -35,10 +35,9 @@ namespace CheckPoint02
             }                
         }
 
-
         public int Length
         {
-            get { return _text.Length; }
+            get { return _text.Length + 1; }
         }
 
         public string Sentence
@@ -69,7 +68,6 @@ namespace CheckPoint02
         public SentenceUnit(string text1, SentenceKind kind)
         {
             text = text1;
-
             sentenseKind = kind;
         }
     }

@@ -15,23 +15,6 @@ namespace CheckPoint02
         List<SentenceUnit> MySentences = new List<SentenceUnit>();
         public string text;        
         public string sentence_separators = "([.!?]) ";
-        
-        
-        public void SortSentencesByWordsCount()
-        {
-            if (MySentences.Count > 0)
-            {
-                IEnumerable<SentenceUnit> Result = from c in MySentences orderby c.MyWords.Count select c;
-                Result.PrintSentences(true);
-
-
-
-
-
-            }
-
-            
-        }
 
         public Task1(string input_text)
         {
@@ -40,12 +23,18 @@ namespace CheckPoint02
                 text = input_text;
                 PrepareText();
                 Extract_Sentences();
-                //Extract_Words();
-                SortSentencesByWordsCount();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Задание 1-1: Вывести все предложения заданного текста в порядке возрастания количества слов в каждом из них:");
+                MySentences.SortSentencesByWordsCount().PrintSentences(false);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Задание 1-2: Во всех вопросительных предложениях текста найти и напечатать без повторений слова заданной длины:");
+                Console.WriteLine("Все вопросительные предложения:");
+                MySentences.SelectQuestionSentences().PrintSentences(true);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Все вопросительные предложения:");
+                MySentences.SelectQuestionSentences().SelectWordsByLengthInSentences(3).PrintWordsInList();
             }
         }
-
-
         
         public void Extract_Sentences()
         {
@@ -55,12 +44,8 @@ namespace CheckPoint02
                 {
                     if (sentences[i].Length > 2)
                         if (sentences[i][sentences[i].Length - 1] == ' ')
-                            sentences[i] = sentences[i].Remove(sentences[i].Length - 1, 1);
-                    Console.WriteLine("[{2}:{0}]:{1}", sentences[i].Length, sentences[i],i);
-                }
-
-            Console.WriteLine(sentences.Length);
-
+                            sentences[i] = sentences[i].Remove(sentences[i].Length - 1, 1);                 
+                }            
             if (sentences.Length>2)
             {
                 int i = 0;
@@ -70,59 +55,24 @@ namespace CheckPoint02
                     {
                         switch (sentences[i+1][0])
                             {
-                                case '.' :
-                                    
+                                case '.' :                                    
                                     MySentences.Add (new SentenceUnit(sentences[i], SentenceKind.declarative));
-                                    break;
-                                    
-                                case '!' :
-                                    
+                                    break;                                    
+                                case '!' :                                    
                                     MySentences.Add (new SentenceUnit(sentences[i], SentenceKind.exclamatory));
-                                    break;
-                                    
-                                case '?' :
-                                    
+                                    break;                                    
+                                case '?' :                                    
                                     MySentences.Add (new SentenceUnit(sentences[i], SentenceKind.question));
-                                    break;
-                                    
-                                default:
-                                    
+                                    break;                                    
+                                default:                                    
                                     MySentences.Add (new SentenceUnit(sentences[i], SentenceKind.unknown));
-                                    break;
-                                    
+                                    break;                                    
                             }                        
                     }
                     i += 2;                    
                 }                
             }
-
-            if (MySentences.Count > 0)
-                foreach (SentenceUnit item in MySentences)
-                {
-                    Console.Write("[{0}]:{1}", item.text.Length, item.text);
-                    switch (item.sentenseKind)  
-                    {
-                        case SentenceKind.declarative:
-                            Console.WriteLine('.');
-                            break;
-                        case SentenceKind.question:
-                            Console.WriteLine('?');
-                            break;
-                        case SentenceKind.exclamatory:
-                            Console.WriteLine('!');
-                            break;
-                        case SentenceKind.unknown:
-                            Console.WriteLine('#');
-                            break;
-                        default:
-                            break;
-                    }
-                }
-
-        }
-         
-         
-        
+        }        
 
         public void PrepareText()
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CheckPoint02
 {
-    public class Unit
+    public abstract class Unit
     {
         public string text { get; set; }
     }
