@@ -15,7 +15,19 @@ namespace CheckPoint02
         List<SentenceUnit> MySentences = new List<SentenceUnit>();
         public string text;        
         public string sentence_separators = "([.!?]) ";
-        
+
+        public string ReplaceSentenceWordsBySubStr(SentenceUnit Sentence, int WordLength, string SubStr)
+        {
+            if ((Sentence != null) && (Sentence.MyWords.Count >= 1))
+            {
+                string text = Sentence.Sentence;
+                foreach (WordUnit Word in Sentence.MyWords)
+                    if (Word.Length == WordLength)             
+                            text = text.Replace(Word.text, SubStr);
+                return text;
+            }
+            else return "";
+        }        
 
         public Task1(string input_text)
         {
@@ -58,6 +70,7 @@ namespace CheckPoint02
                 Console.WriteLine("Весь текст:");
                 MySentences.PrintSentences(false);
                 Console.ForegroundColor = ConsoleColor.White;
+                string TextResult;
                 do
                 {
                     Console.ForegroundColor = ConsoleColor.White;
@@ -76,14 +89,30 @@ namespace CheckPoint02
                     {
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.Write("Результат:");
-                        string RR = text.DeleteAllWordsStartConsonant(MySentences, selector).PrepareText();
+                        TextResult = text.DeleteAllWordsStartConsonant(MySentences, selector).PrepareText();
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(RR);
-                        
+                        Console.WriteLine(TextResult);                        
                     }
                 } while (selector >= 1);
-
-                                
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Задание 1-4: В некотором предложении текста слова заданной длины заменить указанной подстрокой, длина которой может не совпадать с длиной слова:");
+                Console.WriteLine("Количество предложений:{0}.", MySentences.Count);
+                Console.ForegroundColor = ConsoleColor.Green;
+                for (int i = 0; i < MySentences.Count; i++)
+                    Console.WriteLine("[{0}]:{1}", i+1, MySentences[i].Sentence);
+                int SentenseIndex, WordLength;
+                string SubStr;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Введите номер предложения:");
+                SentenseIndex = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Введите длину заменяемых слов:");
+                WordLength = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Введите заменяющую подстроку:");
+                SubStr = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Изначальное предложение №{0}:{1}", SentenseIndex, MySentences[SentenseIndex - 1].Sentence);
+                TextResult = ReplaceSentenceWordsBySubStr(MySentences[SentenseIndex - 1], WordLength, SubStr);
+                Console.WriteLine("Результат:{0}", TextResult);                                
             }
         }
         
@@ -123,8 +152,6 @@ namespace CheckPoint02
                     i += 2;                    
                 }                
             }
-        }        
-
-
+        }
     }
 }

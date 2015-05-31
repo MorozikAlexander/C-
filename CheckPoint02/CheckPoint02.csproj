@@ -43,11 +43,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SentenceUnit.cs" />
+    <Compile Include="Task1\SentenceUnit.cs" />
     <Compile Include="Task1\MyExtensions.cs" />
     <Compile Include="Task1\Task1.cs" />
-    <Compile Include="Unit.cs" />
-    <Compile Include="WordUnit.cs" />
+    <Compile Include="Task1\Unit.cs" />
+    <Compile Include="Task1\WordUnit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

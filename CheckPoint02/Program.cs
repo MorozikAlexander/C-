@@ -11,8 +11,7 @@ namespace CheckPoint02
     {
         static void Main(string[] args)
         {
-            string text = "";            
-
+            string text = "";
             try
             {
                 text = System.IO.File.ReadAllText("../../Text.txt");
@@ -21,10 +20,7 @@ namespace CheckPoint02
             catch (Exception e)
             {
                 Console.WriteLine("Ошибка:" + e.Message);
-            }
-            
-            //Task1 T1 = new Task1(text);
-            
+            }            
             Console.ReadKey();
         }
     }
