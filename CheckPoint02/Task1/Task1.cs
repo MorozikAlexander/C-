@@ -15,13 +15,14 @@ namespace CheckPoint02
         List<SentenceUnit> MySentences = new List<SentenceUnit>();
         public string text;        
         public string sentence_separators = "([.!?]) ";
+        
 
         public Task1(string input_text)
         {
             if (input_text.Length > 0)
-            {
+            {                
                 text = input_text;
-                PrepareText();
+                text = text.PrepareText();
                 Extract_Sentences();
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Задание 1-1: Вывести все предложения заданного текста в порядке возрастания количества слов в каждом из них:");
@@ -30,9 +31,59 @@ namespace CheckPoint02
                 Console.WriteLine("Задание 1-2: Во всех вопросительных предложениях текста найти и напечатать без повторений слова заданной длины:");
                 Console.WriteLine("Все вопросительные предложения:");
                 MySentences.SelectQuestionSentences().PrintSentences(true);
+                int selector;                
+                do
+                {
+                    Console.ForegroundColor = ConsoleColor.White;                    
+                    selector = 1;
+                    try
+                    {
+                        Console.Write("Какая длина слов вас интересует(< 1 -выход, >= 1 - выполнение):");
+                        selector = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (Exception e)
+                    {                        
+                        Console.WriteLine("!Ошибка:{0}:вводите целые числа!", e.Message);                        
+                    }
+                    Console.ForegroundColor = ConsoleColor.White;
+                    if (selector >= 1)
+                    {
+                        Console.Write("Результат:");
+                        MySentences.SelectQuestionSentences().SelectWordsByLengthInSentences(selector).PrintWordsInList();
+                        Console.WriteLine();
+                    }                    
+                } while (selector >= 1);
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Все вопросительные предложения:");
-                MySentences.SelectQuestionSentences().SelectWordsByLengthInSentences(3).PrintWordsInList();
+                Console.WriteLine("Задание 1-3: Из текста удалить все слова заданной длины, начинающиеся на согласную букву:");
+                Console.WriteLine("Весь текст:");
+                MySentences.PrintSentences(false);
+                Console.ForegroundColor = ConsoleColor.White;
+                do
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                    selector = 1;
+                    try
+                    {
+                        Console.Write("Какая длина слов вас интересует(< 1 -выход, >= 1 - выполнение):");
+                        selector = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("!Ошибка:{0}:вводите целые числа!", e.Message);
+                    }
+                    
+                    if (selector >= 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write("Результат:");
+                        string RR = text.DeleteAllWordsStartConsonant(MySentences, selector).PrepareText();
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(RR);
+                        
+                    }
+                } while (selector >= 1);
+
+                                
             }
         }
         
@@ -74,25 +125,6 @@ namespace CheckPoint02
             }
         }        
 
-        public void PrepareText()
-        {
-            if (text.Length > 0)
-            {
-                text = text.Replace("-\r\n", "");
-                text = text.Replace("\r\n", " ");
-                text = text.Replace('\t', ' ');
-                while (text.Contains("  ")) text = text.Replace("  ", " ");
-                while (text.Contains("..")) text = text.Replace("..", ".");
-                while (text.Contains("!!")) text = text.Replace("!!", "!");
-                while (text.Contains("??")) text = text.Replace("??", "?");
-                while (text[text.Length - 1] == ' ') text = text.Remove(text.Length - 1, 1);
-                while ((text[0] == ' ') || (text[0] == '!') || (text[0] == '.') || (text[0] == ',') || (text[0] == '?'))
-                    text = text.Remove(0, 1);
-                if ((text[text.Length - 1] == '.') || (text[text.Length - 1] == '!') || (text[text.Length - 1] == '?'))
-                    text = string.Concat(text, ' ');
-                else
-                    text = string.Concat(text, ". ");
-            }
-        }
+
     }
 }

@@ -48,7 +48,6 @@
     <Compile Include="Task1\Task1.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="WordUnit.cs" />
-    <Compile Include="WordUnitComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

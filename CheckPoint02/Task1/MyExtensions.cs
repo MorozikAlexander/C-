@@ -8,6 +8,46 @@ namespace CheckPoint02
 {
     static class MyExtensions
     {
+        public static string PrepareText(this string text)
+        {
+            if (text.Length > 0)
+            {
+                text = text.Replace("-\r\n", "");
+                text = text.Replace("\r\n", " ");
+                text = text.Replace('\t', ' ');
+                while (text.Contains(" ,")) text = text.Replace(" ,", ",");
+                while (text.Contains("  ")) text = text.Replace("  ", " ");
+                while (text.Contains("..")) text = text.Replace("..", ".");
+                while (text.Contains("!!")) text = text.Replace("!!", "!");
+                while (text.Contains("??")) text = text.Replace("??", "?");
+                while (text[text.Length - 1] == ' ') text = text.Remove(text.Length - 1, 1);
+                while ((text[0] == ' ') || (text[0] == '!') || (text[0] == '.') || (text[0] == ',') || (text[0] == '?'))
+                    text = text.Remove(0, 1);
+                if ((text[text.Length - 1] == '.') || (text[text.Length - 1] == '!') || (text[text.Length - 1] == '?'))
+                    text = string.Concat(text, ' ');
+                else
+                    text = string.Concat(text, ". ");
+                return text;
+            }
+            else return "";
+        }
+
+        public static string DeleteAllWordsStartConsonant(this string text, List<SentenceUnit> Sentences, int WordLength)
+        {
+            if ((text.Length > 1) && (Sentences.Count >= 1))
+            {
+                string consonant_letters = "QqWwRrTtPpSsDdFfGgHhKkLlZzXxCcVvBbNnMmЦцКкГгШшЩщЗзХхФфВвПпРрЛлДдЖжЧчСсМмТтБб";
+                foreach (SentenceUnit Sentence in Sentences)                
+                    if (Sentence.MyWords.Count >= 1)
+                        foreach (WordUnit Word in Sentence.MyWords)
+                            if (Word.Length == WordLength)
+                                if ((consonant_letters.IndexOf(Word.text[0]) != -1) && (text.Contains(Word.text)))
+                                    text = text.Replace(Word.text, "");                
+                return text;
+            }
+            else return "";
+        }
+
         public static List<WordUnit> SelectWordsByLengthInSentences(this List<SentenceUnit> Sentences, int WordLength)
         {
             if (Sentences.Count > 0)
