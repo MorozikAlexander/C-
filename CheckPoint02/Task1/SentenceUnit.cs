@@ -7,11 +7,11 @@ using System.Text.RegularExpressions;
 namespace CheckPoint02
 {
     public class SentenceUnit
-    {
-        public SentenceKind sentenseKind;
+    {        
         private string _text;
-        public List<WordUnit> MyWords = new List<WordUnit>();
-        public static string word_separators = " [-,:;] [-,:;] |[-,:;] [-,:;] | [-,:;] |[-,:;] |[-,:;] |[-,:;]| ";
+        private static string _word_separators = " [-,:;] [-,:;] |[-,:;] [-,:;] | [-,:;] |[-,:;] |[-,:;] |[-,:;]| ";
+        public List<WordUnit> Words = new List<WordUnit>();
+        public SentenceKind SentenseKind;        
 
         public string text
         {
@@ -25,13 +25,13 @@ namespace CheckPoint02
 
         public void Extract_Words()
         {
-            MyWords.Clear();
+            Words.Clear();
             if (_text.Length > 0)
             {
-                string[] words = Regex.Split(_text, word_separators);
+                string[] words = Regex.Split(_text, _word_separators);
                 if (words.Length > 0)
                     for (int i = 0; i < words.Length; i++)                        
-                        MyWords.Add(new WordUnit(words[i]));                    
+                        Words.Add(new WordUnit(words[i]));                    
             }                
         }
 
@@ -44,7 +44,7 @@ namespace CheckPoint02
         {
             get
             {
-                switch (sentenseKind)
+                switch (SentenseKind)
                 {
                     case SentenceKind.declarative:
                         return _text + '.';
@@ -68,7 +68,7 @@ namespace CheckPoint02
         public SentenceUnit(string text1, SentenceKind kind)
         {
             text = text1;
-            sentenseKind = kind;
+            SentenseKind = kind;
         }
     }
 }

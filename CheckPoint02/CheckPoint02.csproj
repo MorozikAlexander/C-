@@ -44,10 +44,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task1\SentenceUnit.cs" />
-    <Compile Include="Task1\MyExtensions.cs" />
+    <Compile Include="MyExtensions.cs" />
     <Compile Include="Task1\Task1.cs" />
-    <Compile Include="Task1\Unit.cs" />
-    <Compile Include="Task1\WordUnit.cs" />
+    <Compile Include="TextBaseUnit.cs" />
+    <Compile Include="WordUnit.cs" />
+    <Compile Include="Task2Concordance\ConcordanceUnit.cs" />
+    <Compile Include="Task2Concordance\ConcordanceWordUnit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -55,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Text.txt" />
+    <Content Include="Text1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
