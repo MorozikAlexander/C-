@@ -32,11 +32,44 @@ namespace CheckPoint02
             else return "";
         }
 
+        public static string PrepareTextForConcordance(this string text)
+        {
+            text = text.PrepareText();
+            if (text.Length > 0)
+            {
+                text = text.Replace('\"', ' ');
+                text = text.Replace('\'', ' ');
+                text = text.Replace('–', ' ');
+                text = text.Replace('—', ' ');
+                text = text.Replace('.', ' ');
+                text = text.Replace('[', ' ');
+                text = text.Replace(']', ' ');
+                text = text.Replace('{', ' ');
+                text = text.Replace('}', ' ');
+                text = text.Replace(',', ' ');
+                text = text.Replace('!', ' ');
+                text = text.Replace('?', ' ');
+                text = text.Replace('„', ' ');
+                text = text.Replace('=', ' ');
+                text = text.Replace('«', ' ');
+                text = text.Replace('»', ' ');
+                text = text.Replace('…', ' ');
+                text = text.Replace('?', ' ');
+                text = text.Replace('?', ' ');
+                text = text.Replace('?', ' ');
+                while (text.Contains("  ")) text = text.Replace("  ", " ");
+                while (text[text.Length - 1] == ' ') text = text.Remove(text.Length - 1, 1);
+                while ((text[0] == ' ')) text = text.Remove(0, 1);
+                return text;
+            }
+            else return "";
+        }
+
         public static string DeleteAllWordsStartConsonant(this string text, List<SentenceUnit> Sentences, int WordLength)
         {
             if ((text.Length > 1) && (Sentences.Count >= 1))
             {
-                string consonant_letters = "QqWwRrTtPpSsDdFfGgHhKkLlZzXxCcVvBbNnMmЦцКкГгШшЩщЗзХхФфВвПпРрЛлДдЖжЧчСсМмТтБб";
+                string consonant_letters = "QqWwRrTtPpSsDdFfGgHhKkLlZzXxCcVvBbNnMmЦцКкНнГгШшЩщЗзХхФфВвПпРрЛлДдЖжЧчСсМмТтБб";
                 foreach (SentenceUnit Sentence in Sentences)                
                     if (Sentence.Words.Count >= 1)
                         foreach (WordUnit Word in Sentence.Words)

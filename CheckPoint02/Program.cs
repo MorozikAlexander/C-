@@ -14,9 +14,12 @@ namespace CheckPoint02
             string text = "";
             try
             {
-                //text = System.IO.File.ReadAllText("../../Text.txt");
-                //Task1 T1 = new Task1(text);
-                ConcordanceUnit Concordance = new ConcordanceUnit("../../Text1.txt", "../../Concordance.txt");
+                text = System.IO.File.ReadAllText("../../Text.txt");
+                Task1 T1 = new Task1(System.IO.File.ReadAllText("../../Text.txt"));
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Задание №2: текст из../../Text.txt, конкорданс в../../Concordance.txt");
+                Console.Write("Введите количество строк на странице:");
+                ConcordanceUnit Concordance = new ConcordanceUnit("../../Text1.txt", "../../Concordance.txt", Convert.ToInt32(Console.ReadLine()));                    
             }
             catch (Exception e)
             {

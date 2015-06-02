@@ -9,12 +9,14 @@ namespace CheckPoint02
     public class ConcordanceWordUnit : WordUnit
     {
         public int NumberOfEntries;
-        public int[] OnPages;
+        public List<int> OnPages = new List<int>();
 
-        public ConcordanceWordUnit(string word) : base(word)
+        public ConcordanceWordUnit(string word, int page) : base(word)
         {
-            NumberOfEntries = 0;
-            OnPages = null;
+            NumberOfEntries = 1;
+            OnPages.Add(page);
+            
+
         }
     }
 }
