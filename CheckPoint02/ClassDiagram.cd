@@ -43,7 +43,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint02.ConcordanceUnit">
-    <Position X="2.75" Y="4.5" Width="1.5" />
+    <Position X="2.75" Y="4.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Task2Concordance\ConcordanceUnit.cs</FileName>

@@ -14,6 +14,5 @@ namespace CheckPoint03
         {
             CallNumber = call_number;
         }
-
     }
 }

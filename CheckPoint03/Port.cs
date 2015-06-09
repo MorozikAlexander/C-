@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace CheckPoint03
 {
-    public class Port
-    {
-        int PortID;
-        bool Empty;
+    public enum PortStatusEnum { ON, OFF, BUSY };
 
-        public Port(int port)
+    public class Port
+    {        
+        public int TerminalAbonentNumber;
+        public PortStatusEnum PortStatus; 
+
+        public Port(int number)
         {
-            PortID = port;
-            Empty = true;
+            TerminalAbonentNumber = number;            
+            PortStatus = PortStatusEnum.OFF;
         }
     }
 }

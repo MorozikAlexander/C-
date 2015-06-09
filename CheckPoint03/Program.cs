@@ -10,10 +10,8 @@ namespace CheckPoint03
     {
         static void Main(string[] args)
         {            
-            ATS MyATS = new ATS(10);
+            ATS MyATS = new ATS();
             Terminal MyTerminal = new Terminal(112233, MyATS);
-            //MyTerminal.OnCall += MyATS.SomeTerminalCall;
-            MyTerminal.ConnectToPort();
             MyTerminal.Call(555244);
             Console.ReadKey();
         }
