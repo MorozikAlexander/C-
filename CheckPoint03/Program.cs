@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace CheckPoint03
 {
+
     class Program
     {
         static void Main(string[] args)
         {            
-            ATS MyATS = new ATS();
-            Terminal MyTerminal = new Terminal(112233, MyATS);
+            ATSUnit MyATS = new ATSUnit();
+            TerminalUnit MyTerminal = new TerminalUnit(112233, MyATS);
             MyTerminal.Call(555244);
             Console.ReadKey();
         }
+
+
     }
 }

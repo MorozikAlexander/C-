@@ -10,6 +10,8 @@ namespace CheckPoint03
     {
         public int CallNumber;
 
+        public string Result;
+
         public CallEventArgs(int call_number)
         {
             CallNumber = call_number;

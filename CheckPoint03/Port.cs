@@ -8,12 +8,12 @@ namespace CheckPoint03
 {
     public enum PortStatusEnum { ON, OFF, BUSY };
 
-    public class Port
+    public class PortUnit
     {        
         public int TerminalAbonentNumber;
         public PortStatusEnum PortStatus; 
 
-        public Port(int number)
+        public PortUnit(int number)
         {
             TerminalAbonentNumber = number;            
             PortStatus = PortStatusEnum.OFF;

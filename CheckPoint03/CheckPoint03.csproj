@@ -42,7 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ATS.cs" />
+    <Compile Include="BillingPlan.cs" />
     <Compile Include="CallEventArgs.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Contract.cs" />
     <Compile Include="Port.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

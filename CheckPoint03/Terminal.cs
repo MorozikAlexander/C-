@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CheckPoint03
 {
-    public class Terminal
+    public class TerminalUnit
     {        
         public event EventHandler<CallEventArgs> OnCall;
 
         public int AbonentNumber;        
 
-        public Terminal(int number, ATS ats)
+        public TerminalUnit(int number, ATSUnit ats)
         {
             AbonentNumber = number;
             OnCall += ats.SomeTerminalCall;
@@ -22,7 +22,10 @@ namespace CheckPoint03
         {
             if (OnCall != null)
             {
-                OnCall(this, new CallEventArgs(call_number));                
+                CallEventArgs MYPARAM = new CallEventArgs(call_number);
+                OnCall(this, MYPARAM);
+                Console.WriteLine(MYPARAM.Result);
+                
             }
         }
     }

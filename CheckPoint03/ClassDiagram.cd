@@ -1,42 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="CheckPoint03.ATS">
-    <Position X="3" Y="0.5" Width="2.5" />
+  <Class Name="CheckPoint03.ATSUnit">
+    <Position X="0.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>ATS.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.CallEventArgs">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>CallEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.Program">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CheckPoint03.Terminal">
-    <Position X="3" Y="2.75" Width="2.5" />
+  <Class Name="CheckPoint03.TerminalUnit">
+    <Position X="0.5" Y="2.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQIAAAAAAAAAAAAAAQBAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Terminal.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CheckPoint03.Port">
-    <Position X="6.75" Y="3" Width="2" />
+  <Class Name="CheckPoint03.PortUnit">
+    <Position X="3.75" Y="3" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Port.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="CheckPoint03.ClientUnit">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckPoint03.BillingPlanUnit">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BillingPlan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckPoint03.ContractUnit">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Contract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="CheckPoint03.PortStatusEnum">
-    <Position X="9.25" Y="3" Width="1.5" />
+    <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAAAAAAgAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Port.cs</FileName>
