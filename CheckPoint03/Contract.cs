@@ -7,17 +7,18 @@ namespace CheckPoint03
 {
     public class ContractUnit
     {
+        public int ContractID;
         public ClientUnit Client;
         public BillingPlanUnit BillingPlan;
-        public TerminalUnit Terminal;
+        
         public DateTime LastBillingPlanChange;
 
-        public ContractUnit(ClientUnit client, BillingPlanUnit billingplan, TerminalUnit terminal)
+        public ContractUnit(int contractid, ClientUnit client, BillingPlanUnit billingplan, DateTime registrationdate)
         {
+            ContractID = contractid;
             Client = client;
-            BillingPlan = billingplan;
-            Terminal = terminal;
-            LastBillingPlanChange = DateTime.Now;
+            BillingPlan = billingplan;            
+            LastBillingPlanChange = registrationdate;
         }
     }
 }

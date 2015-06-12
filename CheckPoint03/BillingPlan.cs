@@ -7,9 +7,9 @@ namespace CheckPoint03
 {
     public class BillingPlanUnit
     {
-        int BillingPlanID;
-        string BillingPlanName;
-        int MinuteCost;
+        public int BillingPlanID;
+        public string BillingPlanName;
+        public int MinuteCost;
 
         public BillingPlanUnit(int id, string name, int cost)
         {

@@ -7,13 +7,13 @@ namespace CheckPoint03
 {
     public class ClientUnit
     {
-        //public int 
+        public int ClientID;
         public string Name;
         public string SurName;
 
-
-        public ClientUnit(string name, string surname)
+        public ClientUnit(int clientid, string name, string surname)
         {
+            ClientID = clientid;
             Name = name;
             SurName = surname;
         }

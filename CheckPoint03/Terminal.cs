@@ -9,12 +9,13 @@ namespace CheckPoint03
     public class TerminalUnit
     {        
         public event EventHandler<CallEventArgs> OnCall;
+        public int AbonentNumber;
+        public ContractUnit Contract; 
 
-        public int AbonentNumber;        
-
-        public TerminalUnit(int number, ATSUnit ats)
+        public TerminalUnit(int number, ContractUnit contract, ATSUnit ats)
         {
             AbonentNumber = number;
+            Contract = contract;
             OnCall += ats.SomeTerminalCall;
         }
 
@@ -24,8 +25,7 @@ namespace CheckPoint03
             {
                 CallEventArgs MYPARAM = new CallEventArgs(call_number);
                 OnCall(this, MYPARAM);
-                Console.WriteLine(MYPARAM.Result);
-                
+                Console.WriteLine(MYPARAM.Result);                
             }
         }
     }
