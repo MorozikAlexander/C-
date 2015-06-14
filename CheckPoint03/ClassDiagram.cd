@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CheckPoint03.ATSUnit">
-    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Position X="2.5" Y="2.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
-      <FileName>ATS.cs</FileName>
+      <HashCode>IAQAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAEBAgAAAAAA=</HashCode>
+      <FileName>Units\ATSUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CheckPoint03.CallEventArgs">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="CheckPoint03.CallTerminalEventArgs">
+    <Position X="8.25" Y="4.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACA=</HashCode>
-      <FileName>CallEventArgs.cs</FileName>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACg=</HashCode>
+      <FileName>EventArgs\CallTerminalEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.Program">
@@ -22,45 +22,73 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.TerminalUnit">
-    <Position X="5.25" Y="3.5" Width="2.5" />
+    <Position X="0.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAQIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
-      <FileName>Terminal.cs</FileName>
+      <HashCode>AAAQQIAADAAAAAAAAAAAAAAIAAACAAQAAAAIAgAAAIA=</HashCode>
+      <FileName>Units\TerminalUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.PortUnit">
-    <Position X="2.75" Y="4.75" Width="2" />
+    <Position X="4.75" Y="2.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
-      <FileName>Port.cs</FileName>
+      <HashCode>AAAAAAAAEAAABAAAAAAAIAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Units\PortUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.ClientUnit">
-    <Position X="8" Y="3.75" Width="1.5" />
+    <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Client.cs</FileName>
+      <HashCode>AAAAAAAAAAIAAAAAAAAEAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\ClientUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.BillingPlanUnit">
-    <Position X="9.25" Y="1" Width="1.75" />
+    <Position X="4.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BillingPlan.cs</FileName>
+      <FileName>Units\BillingPlanUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.ContractUnit">
-    <Position X="7" Y="1" Width="2" />
+    <Position X="2.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAAAAAAAAAQAAAAIAAAAAAAAAAAAAQ=</HashCode>
-      <FileName>Contract.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAgAAIAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Units\ContractUnit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckPoint03.AnswerTerminalEventArgs">
+    <Position X="10.75" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>EventArgs\AnswerTerminalEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckPoint03.EndCallTerminalEventArgs">
+    <Position X="10.75" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>EventArgs\EndCallTerminalEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckPoint03.RegisterTermianlEventArgs">
+    <Position X="10.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>EventArgs\RegisterTermianlEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckPoint03.BillingRecordUnit">
+    <Position X="8.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Units\BillingRecordUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="CheckPoint03.PortStatusEnum">
-    <Position X="0.5" Y="5.5" Width="1.5" />
+    <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAAAAgAAAAACAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Port.cs</FileName>
+      <HashCode>AAAAAAQAAAAAQAAAAAAAAgAAAAACAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Units\PortUnit.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

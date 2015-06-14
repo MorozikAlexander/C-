@@ -41,15 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ATS.cs" />
-    <Compile Include="BillingPlan.cs" />
-    <Compile Include="CallEventArgs.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Contract.cs" />
-    <Compile Include="Port.cs" />
+    <Compile Include="EventArgs\AnswerTerminalEventArgs.cs" />
+    <Compile Include="EventArgs\EndCallTerminalEventArgs.cs" />
+    <Compile Include="Units\ATSUnit.cs" />
+    <Compile Include="Units\BillingPlanUnit.cs" />
+    <Compile Include="EventArgs\CallTerminalEventArgs.cs" />
+    <Compile Include="Units\BillingRecordUnit.cs" />
+    <Compile Include="Units\ClientUnit.cs" />
+    <Compile Include="Units\ContractUnit.cs" />
+    <Compile Include="Units\PortUnit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Terminal.cs" />
+    <Compile Include="EventArgs\RegisterTermianlEventArgs.cs" />
+    <Compile Include="Units\TerminalUnit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
