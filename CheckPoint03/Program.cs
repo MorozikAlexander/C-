@@ -76,6 +76,17 @@ namespace CheckPoint03
             Terminal1.EndCall(out message, new DateTime(2015, 6, 10, 17, 20, 00));
             Console.WriteLine(message);
 
+            Terminal1.Call(out message, 666, new DateTime(2014, 01, 01, 10, 00, 00));
+            Terminal3.Answer(out message, new DateTime(2014, 01, 01, 10, 00, 03));
+            Terminal1.EndCall(out message, new DateTime(2014, 01, 01, 10, 25, 00));
+
+            Terminal1.Call(out message, 555, new DateTime(2015, 01, 01, 12, 00, 00));
+            Terminal2.Answer(out message, new DateTime(2015, 01, 01, 12, 00, 03));
+            Terminal1.EndCall(out message, new DateTime(2015, 01, 01, 13, 30, 00));
+
+            Terminal1.Call(out message, 666, new DateTime(2015, 10, 01, 12, 00, 00));
+            Terminal3.Answer(out message, new DateTime(2015, 10, 01, 12, 00, 05));
+            Terminal1.EndCall(out message, new DateTime(2015, 10, 01, 15, 15, 00));
 
             Console.WriteLine("#Биллинг по всем абонентам#");
 
@@ -83,12 +94,20 @@ namespace CheckPoint03
             if (MyATS.Billing.Count > 0)
                 foreach (BillingRecordUnit item in MyATS.Billing)
                 {
-                    calllong = item.EndCall - item.StartCall;
-                    Console.WriteLine("Звонок {0} к {1}: c {2} по {3} = {4}", item.Terminal.AbonentNumber, item.toTerminal.AbonentNumber, item.StartCall, item.EndCall, calllong.TotalMinutes);                    
+                    calllong = item.EndCall - item.StartCall;                    
+                    Console.WriteLine("Звонок {0} к {1}: c {2} по {3} = {4}", item.Terminal.AbonentNumber, item.toTerminal.AbonentNumber, item.StartCall, item.EndCall, Math.Ceiling(calllong.TotalMinutes));                    
                 }
 
-
-
+            TerminalUnit currentTerminal = Terminal1;
+            Console.WriteLine("#Биллинг по абоненту#:" + currentTerminal.Contract.Client.SurName + ' ' + currentTerminal.Contract.Client.Name + ' ' + currentTerminal.AbonentNumber);
+            List<BillingRecordUnit> currentBilling = new List<BillingRecordUnit>();
+            currentBilling = (from c in MyATS.Billing where c.Terminal == currentTerminal orderby c.toTerminal.AbonentNumber select c).ToList<BillingRecordUnit>();
+            if (currentBilling.Count > 0)
+                foreach (BillingRecordUnit item in currentBilling)
+                {
+                    calllong = item.EndCall - item.StartCall;
+                    Console.WriteLine("Звонок к {1}: c {2} по {3} = {4}", item.Terminal.AbonentNumber, item.toTerminal.AbonentNumber, item.StartCall, item.EndCall, Math.Ceiling(calllong.TotalMinutes));
+                }
             Console.ReadKey();
         }
 
