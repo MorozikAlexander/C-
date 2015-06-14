@@ -95,7 +95,8 @@ namespace CheckPoint03
                 foreach (BillingRecordUnit item in MyATS.Billing)
                 {
                     calllong = item.EndCall - item.StartCall;                    
-                    Console.WriteLine("Звонок {0} к {1}: c {2} по {3} = {4}", item.Terminal.AbonentNumber, item.toTerminal.AbonentNumber, item.StartCall, item.EndCall, Math.Ceiling(calllong.TotalMinutes));                    
+                    Console.WriteLine("Звонок {0} к {1}: c {2} по {3} = {4}", item.Terminal.AbonentNumber, item.toTerminal.AbonentNumber, item.StartCall, item.EndCall, Math.Ceiling(calllong.TotalMinutes));
+                    Console.WriteLine("Стоимость:{0}", Math.Ceiling(calllong.TotalMinutes) * item.Terminal.Contract.BillingPlan.MinuteCost);
                 }
 
             TerminalUnit currentTerminal = Terminal1;
@@ -107,10 +108,9 @@ namespace CheckPoint03
                 {
                     calllong = item.EndCall - item.StartCall;
                     Console.WriteLine("Звонок к {1}: c {2} по {3} = {4}", item.Terminal.AbonentNumber, item.toTerminal.AbonentNumber, item.StartCall, item.EndCall, Math.Ceiling(calllong.TotalMinutes));
+                    Console.WriteLine("Стоимость:{0}", Math.Ceiling(calllong.TotalMinutes) * item.Terminal.Contract.BillingPlan.MinuteCost);
                 }
             Console.ReadKey();
         }
-
-
     }
 }
