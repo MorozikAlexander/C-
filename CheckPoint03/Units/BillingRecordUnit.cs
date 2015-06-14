@@ -8,8 +8,8 @@ namespace CheckPoint03
 {
     public class BillingRecordUnit
     {
-        public TerminalUnit AbonentNumber;
-        public TerminalUnit toAbonentNumber;
+        public TerminalUnit Terminal;
+        public TerminalUnit toTerminal;
         public DateTime StartCall;
         public DateTime EndCall;
 

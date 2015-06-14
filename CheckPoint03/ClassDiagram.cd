@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.CallTerminalEventArgs">
-    <Position X="8.25" Y="4.5" Width="2.25" />
+    <Position X="10.75" Y="4.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACg=</HashCode>
       <FileName>EventArgs\CallTerminalEventArgs.cs</FileName>
@@ -24,7 +24,7 @@
   <Class Name="CheckPoint03.TerminalUnit">
     <Position X="0.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAQQIAADAAAAAAAAAAAAAAIAAACAAQAAAAIAgAAAIA=</HashCode>
+      <HashCode>AAAQQIAADAAAAACAAAAAAAAIAAACAAQAAAAIAgAAAIA=</HashCode>
       <FileName>Units\TerminalUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -57,21 +57,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.AnswerTerminalEventArgs">
-    <Position X="10.75" Y="5.25" Width="2.25" />
+    <Position X="10.75" Y="2.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>EventArgs\AnswerTerminalEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.EndCallTerminalEventArgs">
-    <Position X="10.75" Y="2.25" Width="2.25" />
+    <Position X="10.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>EventArgs\EndCallTerminalEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckPoint03.RegisterTermianlEventArgs">
-    <Position X="10.75" Y="3.75" Width="2.25" />
+    <Position X="8.25" Y="3" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>EventArgs\RegisterTermianlEventArgs.cs</FileName>
@@ -80,7 +80,7 @@
   <Class Name="CheckPoint03.BillingRecordUnit">
     <Position X="8.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AEAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAABACAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Units\BillingRecordUnit.cs</FileName>
     </TypeIdentifier>
   </Class>

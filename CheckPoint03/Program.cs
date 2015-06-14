@@ -44,20 +44,48 @@ namespace CheckPoint03
             foreach (PortUnit item in MyATS.ATS_Ports)
             {
                 Console.WriteLine("ATS Port {1}:{0}", item.Terminal.AbonentNumber, item.PortStatus);
-
             }
-
-            Console.WriteLine("Terminal Port {1}:{0}", Terminal1.AbonentNumber, Terminal1.LinkOnATSPort.PortStatus);
-            Console.WriteLine("Terminal Port {1}:{0}", Terminal2.AbonentNumber, Terminal2.LinkOnATSPort.PortStatus);
-            Console.WriteLine("Terminal Port {1}:{0}", Terminal3.AbonentNumber, Terminal3.LinkOnATSPort.PortStatus);
-
-
-
 
             Terminal3.Call(out message, 555, new DateTime(2015, 6, 10, 15, 00, 00));
             Console.WriteLine(message);
-            Terminal2.Call(out message, 666, new DateTime(2015, 6, 10, 15, 00, 00));
+
+            Terminal2.Answer(out message, new DateTime(2015, 6, 10, 15, 01, 00));
             Console.WriteLine(message);
+
+            Terminal2.EndCall(out message, new DateTime(2015, 6, 10, 15, 02, 00));
+            Console.WriteLine(message);
+
+            Terminal2.Call(out message, 666, new DateTime(2015, 6, 10, 16, 00, 00));
+            Console.WriteLine(message);
+
+            Terminal1.Call(out message, 666, new DateTime(2015, 6, 10, 16, 00, 01));
+            Console.WriteLine(message);
+
+            Terminal3.Answer(out message, new DateTime(2015, 6, 10, 16, 01, 00));
+            Console.WriteLine(message);
+
+            Terminal3.EndCall(out message, new DateTime(2015, 6, 10, 16, 15, 00));
+            Console.WriteLine(message);
+
+            Terminal1.Call(out message, 666, new DateTime(2015, 6, 10, 17, 00, 00));
+            Console.WriteLine(message);
+
+            Terminal3.Answer(out message, new DateTime(2015, 6, 10, 17, 01, 00));
+            Console.WriteLine(message);
+
+            Terminal1.EndCall(out message, new DateTime(2015, 6, 10, 17, 20, 00));
+            Console.WriteLine(message);
+
+
+            Console.WriteLine("#Биллинг по всем абонентам#");
+
+            TimeSpan calllong;
+            if (MyATS.Billing.Count > 0)
+                foreach (BillingRecordUnit item in MyATS.Billing)
+                {
+                    calllong = item.EndCall - item.StartCall;
+                    Console.WriteLine("Звонок {0} к {1}: c {2} по {3} = {4}", item.Terminal.AbonentNumber, item.toTerminal.AbonentNumber, item.StartCall, item.EndCall, calllong.TotalMinutes);                    
+                }
 
 
 
