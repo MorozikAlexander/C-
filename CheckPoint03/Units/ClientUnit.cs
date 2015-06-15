@@ -7,7 +7,7 @@ namespace CheckPoint03
 {
     public class ClientUnit
     {
-        public int ClientID;
+        private int ClientID;
         public string Name;
         public string SurName;
 

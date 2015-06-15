@@ -15,7 +15,6 @@ namespace CheckPoint03
 
         public int AbonentNumber;
         public ContractUnit Contract;
-
         public PortUnit LinkOnATSPort;
 
         public TerminalUnit(out string message, int number, ContractUnit contract, ATSUnit ats)
