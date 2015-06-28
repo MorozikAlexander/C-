@@ -84,18 +84,12 @@ namespace CheckPoint03
             if (sender is TerminalUnit)
             {
                 Console.WriteLine("Терминал с номером:{0} хочет позвонить по номеру:{1}", (sender as TerminalUnit).AbonentNumber, eventargs.CallNumber);
-
-                eventargs.ResultOperationMessage = "Все нормально!";
-                //Searching port with cuurent number
+                eventargs.ResultOperationMessage = "Все нормально!";                
                 if (ATS_Ports.Count > 0)
                 {
                     PortUnit searchport = ATS_Ports.Find(x => x.Terminal.AbonentNumber == eventargs.CallNumber);
-
-
                     if (searchport != null)
-                    {
-                        Console.WriteLine("Найден порт с таким номером:");
-
+                    {                        
                         switch (searchport.PortStatus)
                         {
                             case PortStatusEnum.ON:

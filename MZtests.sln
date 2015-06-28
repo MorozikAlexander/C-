@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPoint02", "CheckPoint0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPoint03", "CheckPoint03\CheckPoint03.csproj", "{F9C93334-C7D6-4612-B7CB-4F353CDD6409}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPoint04", "CheckPoint04\CheckPoint04.csproj", "{14A02238-A26C-45A7-9245-54B6E9422BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHKPNT4Service", "CHKPNT4Service\CHKPNT4Service.csproj", "{E5E0F5D8-E597-4DFA-B48F-C2F23BB09DCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{F9C93334-C7D6-4612-B7CB-4F353CDD6409}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9C93334-C7D6-4612-B7CB-4F353CDD6409}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9C93334-C7D6-4612-B7CB-4F353CDD6409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A02238-A26C-45A7-9245-54B6E9422BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A02238-A26C-45A7-9245-54B6E9422BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A02238-A26C-45A7-9245-54B6E9422BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A02238-A26C-45A7-9245-54B6E9422BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E0F5D8-E597-4DFA-B48F-C2F23BB09DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E0F5D8-E597-4DFA-B48F-C2F23BB09DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E0F5D8-E597-4DFA-B48F-C2F23BB09DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E0F5D8-E597-4DFA-B48F-C2F23BB09DCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
