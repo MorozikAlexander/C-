@@ -38,7 +38,7 @@ namespace CheckPoint04
             return null;
         }
 
-        void watcher_Created(object sender, FileSystemEventArgs e)
+        private void watcher_Created(object sender, FileSystemEventArgs e)
         {
             string filename = Path.GetFileNameWithoutExtension(e.Name);            
             string[] split = filename.Split(new Char[] {'_'});
@@ -49,7 +49,7 @@ namespace CheckPoint04
             }            
         }        
 
-        public void ProcessFile(string file_name, OrderUnit ou)
+        private void ProcessFile(string file_name, OrderUnit ou)
         {            
             var task = new Task(() => CollectorTask(file_name, ou));
             task.Start();            
