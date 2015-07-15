@@ -17,9 +17,54 @@
             </p>
         </div>
         <div>
-            <h3>Заказы</h3>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Manager name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Product Name: @Html.TextBox("SearchStringProduct")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+            <h3>Order by:</h3>
+
+
+            
+            
             <table>
-                <tr>
+                <tr>                    
+                    <th>
+                        @Html.ActionLink(" ID  ", "Index", new { sortOrder = ViewBag.IDSortParm })
+                    </th>
+                    <th>
+                        @Html.ActionLink("Manager Name", "Index", new { sortOrder = ViewBag.ManagerSortParm })
+                    </th>
+                    <th>
+                        @Html.ActionLink("Customer Name", "Index", new { sortOrder = ViewBag.CustomerSortParm })
+                    </th>
+                    <th>
+                        @Html.ActionLink("Product Name", "Index", new { sortOrder = ViewBag.ProductSortParm })
+                    </th>
+                    <th>
+                        @Html.ActionLink("Amount", "Index", new { sortOrder = ViewBag.AmountSortParm })
+                    </th>
+                    <th>
+                        @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.DateSortParm })
+                    </th>
+                </tr>
+
+                <tr>                    
+                <h3>ORDERS:</h3>
+                </tr>
+<tr>
                     <td><p>Order ID</p></td>
                     <td><p>Manager name</p></td>
                     <td><p>Customer name</p></td>
