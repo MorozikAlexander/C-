@@ -9,12 +9,16 @@ namespace CheckPoint05.Controllers
 {
     public class HomeController : Controller
     {
-        public DalUnit DU = new DalUnit();
+        IRepository<OrderUnit> DU;
+
+        public HomeController()
+        {
+            DU = new Repository();
+        }
 
         [HttpGet]
         public ActionResult EditRecord(int id)
-        {
-            //ViewBag.OrderUnit = DU.GetOrder(id);
+        {            
             OrderUnit ou = DU.GetOrder(id);
             if (ou == null)
             {
