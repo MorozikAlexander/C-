@@ -28,12 +28,14 @@ namespace CheckPoint05.Controllers
         }
 
         [HttpPost]
+        [Authorize (Roles = "admin")]
         public ActionResult EditRecord(OrderUnit ou)
         {
             DU.UpdateOrder(ou);
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
