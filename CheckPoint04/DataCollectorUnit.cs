@@ -44,7 +44,7 @@ namespace CheckPoint04
             string[] split = filename.Split(new Char[] {'_'});
             if (split.Length == 2)
             {
-                OrderUnit OU = new OrderUnit() { ManagerName = split[0], Date = split[1]};
+                OrderUnit OU = new OrderUnit() {ManagerName = split[0], Date = DateTime.ParseExact(split[1], "ddMMyyyy", null)};
                 ProcessFile(e.FullPath, OU);
             }            
         }        
@@ -66,6 +66,7 @@ namespace CheckPoint04
                     string[] split = line.Split(new Char[] {' '});
                     if (split.Length == 3)
                     {
+                        
                         ou.CustomerName = split[0];
                         ou.ProductName = split[1];
                         ou.Amount = Convert.ToInt32(split[2]);

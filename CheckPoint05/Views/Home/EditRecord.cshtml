@@ -1,0 +1,42 @@
+﻿@model CheckPoint05.Models.OrderUnit
+
+@{
+    ViewBag.Title = "Edit Record";
+    Layout = null;
+}
+
+<h2>Order № @Model.OrderID</h2>
+@using (Html.BeginForm("EditRecord", "Home", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.OrderID)
+        <p>
+            @Html.LabelFor(m => m.ManagerName, "Manager Name")
+            <br />
+            @Html.EditorFor(m => m.ManagerName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.CustomerName, "Customer Name")
+            <br />
+            @Html.EditorFor(m => m.CustomerName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ProductName, "Product Name")
+            <br />
+            @Html.EditorFor(m => m.ProductName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Amount, "Amount")
+            <br />
+            @Html.EditorFor(m => m.Amount)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Date, "Date")
+            <br />
+            @Html.EditorFor(m => m.Date)
+        </p>
+        <p><input type="submit" value="Apply" /></p>
+    </fieldset>
+}
+
+<h2>EditRecord</h2>
